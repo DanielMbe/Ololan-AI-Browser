@@ -171,7 +171,7 @@ void OAssistantCore::suggestCommands(const QString input, const QString processo
     currentProcessor = processor;
     QNetworkRequest request;
     request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Ololan/3.1.673.33 Chrome/118.0.5993.220 Safari/537.36");
-    QString url = QLatin1String("https://cloudai.ololan.com?");
+    QString url = QLatin1String("");
 
     if (processor.compare("generalProcessor") == 0)
     {
@@ -211,7 +211,7 @@ void OAssistantCore::sendCommand(const QString input, const QString processor)
     currentProcessor = processor;
     QNetworkRequest request;
     request.setRawHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Ololan/3.1.673.33 Chrome/118.0.5993.220 Safari/537.36");
-    QString url = QLatin1String("https://cloudai.ololan.com?");
+    QString url = QLatin1String("");
 
     if (processor.compare("generalProcessor") == 0)
     {
