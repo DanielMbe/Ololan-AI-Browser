@@ -1,0 +1,596 @@
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+#pageToolBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    height: 69px;
+    max-height: 69px;
+    width: 100%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-top: 0.9%;
+    padding-bottom: 0.9%;
+    position: sticky;
+    background-color: white;
+}
+
+#headerA {
+    display: flex;
+    justify-content: flex-start;
+    height: max-content;
+    width: 21.7%;
+    min-width: fit-content;
+}
+
+#headerB {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 78%;
+}
+
+#ololanLogo {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 7px;
+}
+
+#logo {
+    height: 32px;
+    width: 32px;
+}
+
+#pageTitle {
+    height: fit-content;
+    font-size: 14px;
+    font-weight: normal;
+    color: #56bcc5;
+    margin-left: 4px;
+    margin-top: 6.5px;
+}
+
+#searchBox {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 40px;
+    width: 65%;
+    border: 1px solid #f7f7f9;
+    border-radius: 4px;
+    background-color: #fbfbfd;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 2px;
+}
+
+#searchBox:focus-within,
+#searchBox:focus-within:hover {
+    border: 2px solid #68e7f0;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    padding-left: 4px;
+    padding-right: 0px;
+    padding-top: 0px;
+    transition: border-color .11s linear;
+}
+
+#searchBox:hover {
+    border: 1px solid #68e7f0;
+    transition: border-color .11s linear;
+}
+
+#searchInput {
+    background-color: transparent;
+    color: #606060;
+    height: 36px;
+    width: 96.5%;
+    margin-left: 3px;
+    padding-bottom: 2px;
+    padding-right: 3px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#searchInput:focus {
+    color: #656565;
+}
+
+#searchInput,
+#searchInput::placeholder {
+    font-size: 14.3px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#searchInput::placeholder {
+    color: #b6b6b6;
+}
+
+#searchInput::-webkit-search-cancel-button {
+    position: relative;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background-image: url(../../images/closeTwo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#searchInput:focus::-webkit-search-cancel-button {
+    background-image: url(../images/cancelTyping.png);
+}
+
+#searchBoxIcon {
+    height: 16px;
+    width: 16px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+#pageBody {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 89%;
+    max-height: 89%;
+    min-height: 10px;
+    width: 99.9%;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+}
+
+#rightSection {
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    min-height: 1%;
+    width: 78%;
+    max-width: 78%;
+    padding-bottom: 10px;
+}
+
+#controlBar {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 1px;
+    width: auto;
+    border-bottom: 1px solid #f4f4f6;
+    padding: 0px;
+    transition: box-shadow .18s linear;
+    transition: height .11s linear;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#itemList {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 99.9%;
+    width: 99.9%;
+    max-width: 99.9%;
+    max-height: 99.9%;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+#itemList::-webkit-scrollbar {
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    width: 9px;
+    background-color: #f2f5f5;
+}
+
+#itemList::-webkit-scrollbar-thumb {
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    min-height: 5px;
+    background-color: #56bcc5;
+}
+
+#historyItemContainer {
+    display: none;
+    justify-content: center;
+    height: 100%;
+    max-height: max-content;
+    min-height: fit-content;
+    width: 73%;
+    max-width: 73%;
+    min-width: 10%;
+}
+
+.visitedDate {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #d9d9db;
+    height: 32px;
+    width: 40%;
+    min-width: max-content;
+    font-size: 14px;
+    font-weight: bold;
+    color: #656565;
+    margin-top: 0.9%;
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #f4f4f6;
+    border-left: 7px solid #56bcc5;
+    border-radius: 3px;
+    background-color: #f9f9fb;
+    opacity: 1.0;
+}
+
+.visitedDate.hide {
+    transition: .11s linear;
+    opacity: 0.0 !important;
+    height: 16px !important;
+}
+
+.dayDate {
+    box-sizing: border-box;
+    height: 100%;
+    width: 80%;
+    min-width: max-content;
+}
+
+.deleteButton {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    margin-top: 2.5px;
+    cursor: pointer;
+    background-image: url(../../images/closeOne.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+}
+
+.item {
+    box-shadow: 1px 1px 2px #d9d9db;
+    box-sizing: border-box;
+    height: 42px;
+    width: 99%;
+    min-width: 100px;
+    max-width: 99%;
+    border: 1px solid #f9f9fb;
+    border-radius: 4px;
+    background-color: #fdfdff;
+    margin-top: 7px;
+    opacity: 1.0;
+}
+
+.item:hover {
+    background-color: #fafafc;
+}
+
+.item:active {
+    background-color: #f7f7f9;
+}
+
+.item.hide {
+    transition: .12s linear;
+    opacity: 0.0 !important;
+    height: 21px !important;
+}
+
+.item:hover,
+.item:focus,
+.closeButton:hover,
+#thisPCButton:hover,
+#thisPCButton:focus,
+#clearButton:hover,
+#clearButton:active,
+.deleteButton,
+.visitedDate,
+.removeButton,
+.cancelButton {
+    transition: all .11s linear;
+}
+
+.itemLink {
+    display: flex;
+    justify-content: space-evenly;
+    color: #656565;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 7px;
+}
+
+.itemIcon {
+    height: 16px;
+    width: 16px;
+    margin-top: 2px;
+    background-color: transparent;
+}
+
+.itemTitle,
+.itemUrl,
+.visitedTime {
+    box-sizing: border-box;
+    min-width: 30px;
+    max-height: 23px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.itemUrl {
+    width: 43.5%;
+    max-width: 43.5%;
+}
+
+.itemTitle {
+    width: 31.5%;
+    max-width: 31.5%;
+    margin-left: 5px;
+}
+
+.closeButton {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: url(../../images/closeOne.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid transparent;
+    margin-top: 2px;
+    cursor: pointer;
+    outline: none;
+}
+
+.closeButton:hover,
+.deleteButton:hover {
+    background-image: url(../../images/closeTwo.png);
+}
+
+#leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 50px;
+    width: 22%;
+    min-width: 100px;
+    max-width: 22%;
+    border-top: 1px solid #f4f4f6;
+    border-right: 1px solid #f4f4f6;
+    padding: 10px;
+    background-color: white;
+}
+
+#thisPCButton {
+    display: flex;
+    justify-content: flex-start;
+    height: 36px;
+    width: 100%;
+    min-width: 80px;
+    max-width: 100%;
+    border-top: 1px solid #f9f9fb;
+    border-bottom: 1px solid #f9f9fb;
+    border-right: 1px solid #f9f9fb;
+    border-left: 7px solid #56bcc5;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    color: #56bcc5;
+    margin-bottom: 12px;
+    padding-left: 4px;
+    padding-right: 4px;
+    outline: none;
+}
+
+#folderIcon {
+    height: 24px;
+    width: 24px;
+    margin-top: 4px;
+}
+
+#buttonText {
+    display: block;
+    text-align: left;
+    margin-left: 3px;
+    margin-top: 8px;
+    height: 16px;
+    width: 68%;
+    max-width: 68%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#clearButton {
+    display: flex;
+    justify-content: center;
+    height: 36px;
+    width: 75%;
+    min-width: 80px;
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    background-color: #56bcc5;
+    color: #ffffff;
+    padding-right: 10px;
+    outline: none;
+}
+
+#clearButton:hover,
+.removeButton:hover {
+    background-color: #51b2b9;
+    border: 1px solid #51b2b9;
+}
+
+#clearButton:active,
+.removeButton:active {
+    background-color: #4ba4ac;
+    border: 1px solid #4ba4ac;
+    color: #f6f6f6;
+}
+
+.dialogContainer {
+    display: none;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#dialogBoxOne,
+#dialogBoxTwo {
+    display: block;
+    box-sizing: border-box;
+    margin-top: 16%;
+    height: 197px;
+    width: 469px;
+    border: 1px solid #efeff1;
+    border-radius: 7px;
+    background-color: white;
+    padding: 20px;
+}
+
+#dialogTitle {
+    color: #56bcc5;
+    font-size: 16px;
+    height: 30%;
+    width: auto;
+}
+
+#dialogMessage {
+    color: #959595;
+    font-size: 13px;
+    height: 50%;
+    width: auto;
+}
+
+.dialogControls {
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-around;
+    height: auto;
+    width: 100%;
+}
+
+.cancelButton {
+    background-color: transparent;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #efeff1;
+    border-radius: 4px;
+    color: #56bcc5;
+    cursor: pointer;
+    outline: none;
+}
+
+.cancelButton:hover {
+    background-color: #f9f9fb;
+}
+
+.cancelButton:active {
+    background-color: #f0f0f2;
+}
+
+.removeButton {
+    background-color: #56bcc5;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    margin-left: 60%;
+    cursor: pointer;
+    outline: none;
+}
+
+.removeButton:hover {
+    background-color: #51b2b9;
+    border: 1px solid #51b2b9;
+}
+
+.removeButton:active {
+    background-color: #4ba4ac;
+    border: 1px solid #4ba4ac;
+}
+
+.emptyView {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.noResult {
+    display: flex;
+    justify-content: center;
+}
+
+.noResult,
+.emptyView {
+    box-sizing: border-box;
+    margin-top: 14%;
+}
+
+.eViewMessage,
+.noResultMessage {
+    box-sizing: border-box;
+    color: #656565;
+    padding-top: 1%;
+    padding-left: 3%;
+    font-size: 14px;
+}

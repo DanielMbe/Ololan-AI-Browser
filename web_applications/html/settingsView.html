@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ololan settings</title>
+    <link rel="stylesheet" type="text/css" href="../css/settingsStyles.css">
+    <link rel="icon" href="../../images/settingsIcon.png">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/settingsScript.js"></script>
+</head>
+
+<body>
+    <div id="pageHeader">
+        <div id="headerA">
+            <div id="ololanLogo">
+                <img id="logo" src="../images/ololanLogo.png">
+                <div id="pageTitle">settings</div>
+            </div>
+        </div>
+        <div id="headerB">
+        </div>
+    </div>
+    <div id="pageBody">
+        <div id="leftSection">
+            <div id="folderSection">
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/accountSet.png" class="buttonIcon">
+                    <div class="buttonText">Ololan account</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/appearanceSet.png" class="buttonIcon">
+                    <div class="buttonText">Browser appearance</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/onStartupSet.png" class="buttonIcon">
+                    <div class="buttonText">On startup</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/privacySet.png" class="buttonIcon">
+                    <div class="buttonText">Privacy and security</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/personalDataSet.png" class="buttonIcon">
+                    <div class="buttonText">Personal data</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/browsingDataSet.png" class="buttonIcon">
+                    <div class="buttonText">Browsing data</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/searchEngineSet.png" class="buttonIcon">
+                    <div class="buttonText">Search engine</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/languageSet.png" class="buttonIcon">
+                    <div class="buttonText">Languages</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/downloadsSet.png" class="buttonIcon">
+                    <div class="buttonText">Downloads</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/oAssistantSet.png" class="buttonIcon">
+                    <div class="buttonText">Ololan Eina</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/defaultBrowserSet.png" class="buttonIcon">
+                    <div class="buttonText">Default browser</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/systemSet.png" class="buttonIcon">
+                    <div class="buttonText">System</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/resetSet.png" class="buttonIcon">
+                    <div class="buttonText">Restore settings</div>
+                </button>
+                <button type="button" class="optionButton" onclick="selectOption(event)">
+                    <img src="../images/ololanLogo.png" class="buttonIcon">
+                    <div class="buttonText">About Ololan</div>
+                </button>
+            </div>
+        </div>
+        <div id="rightSection">
+            <div id="controlBar"></div>
+            <div id="itemView" onscroll="contentScrolled()">
+                <div class="optionContainer">
+                    <div class="containerTitle">Ololan account</div>
+                    <div id="syncAccount">
+                        <div id="profil">
+                            <div class="rButtonText accountName">GU</div>
+                        </div>
+                        <div id="status" class="accountStatus">Guest User - Not signed in</div>
+                        <button class="rowButton" onclick="synchronize()">
+                            <div class="rButtonText" id="syncButton">Sign in</div>
+                        </button>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Send usage statistics and crash report to Ololan for features
+                            improvement.</div>
+                        <label class="switch">
+                            <input class="switchInput" type="checkbox" id="usageData" onclick="sendUsageData()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow" id="accountDeletionSpace">
+                        <div class="rowDetail">Click to delete your Ololan account and all the related data.</div>
+                        <button class="rowButton" onclick="deleteAccount()">
+                            <div class="rButtonText" id="syncButton">Delete account</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Browser appearance - Theme</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Default theme (light gray)</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #f9f9fb;"></div>
+                            <div class="colorSchemeRight" style="background-color: #d4d4d6;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Light turquoise</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #f9f9fb;"></div>
+                            <div class="colorSchemeRight" style="background-color: #56bcc5;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Light brown</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #f9f9fb;"></div>
+                            <div class="colorSchemeRight" style="background-color: #dd9067;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Dark gray</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #919191;"></div>
+                            <div class="colorSchemeRight" style="background-color: #5a5a5a;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Dark turquoise</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #3f8c91;"></div>
+                            <div class="colorSchemeRight" style="background-color: #27565a;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Dark brown</div>
+                        <div class="palette">
+                            <div class="colorSchemeLeft" style="background-color: #916d44;"></div>
+                            <div class="colorSchemeRight" style="background-color: #5a4425;"></div>
+                        </div>
+                        <label class="checkBx">
+                            <input class="checkBInput colorTheme" type="radio" name="radioTheme"
+                                onclick="selectTheme()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="containerTitle">Browser appearance - Bookmark bar</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Show bookmark bar</div>
+                        <label class="switch">
+                            <input class="switchInput" type="checkbox" id="bookmarkBar" onclick="showBookmarkBar()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="containerTitle">Browser appearance - Font & Zoom</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Page zoom</div>
+                        <div class="rowSelectionMenu">
+                            <select class="selectionMenu" name="selectionMenu" id="pageZoom"
+                                onchange="selectPageZoom()">
+                                <option>10%</option>
+                                <option>20%</option>
+                                <option>30%</option>
+                                <option>50%</option>
+                                <option>65%</option>
+                                <option>80%</option>
+                                <option>100% (default zoom)</option>
+                                <option>110%</option>
+                                <option>125%</option>
+                                <option>150%</option>
+                                <option>200%</option>
+                                <option>225%</option>
+                                <option>250%</option>
+                                <option>300%</option>
+                                <option>400%</option>
+                                <option>500%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Font size</div>
+                        <div class="rowSelectionMenu">
+                            <select class="selectionMenu" name="selectionMenu" id="pageFontSize"
+                                onchange="selectFontSize()">
+                                <option>Tiny</option>
+                                <option>Small</option>
+                                <option>Medium (default size)</option>
+                                <option>Large</option>
+                                <option>Huge</option>
+                                <option id="customFontValue">Custom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Customize fonts</div>
+                        <button class="rowButton" onclick="showCustomFonts(event)">
+                            <div class="rButtonText">Show custom fonts</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                        <div class="optionRow">
+                            <div class="rowDetail">Font size</div>
+                            <div class="range">
+                                <div id="defaultRangeValue">16</div>
+                                <div class="rangeContainer">
+                                    <input class="rangeInput" type="range" min="9" max="72"
+                                        oninput="setDefaultRangeValue()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Minimum font size</div>
+                            <div class="range">
+                                <div id="minimumRangeValue">1</div>
+                                <div class="rangeContainer">
+                                    <input class="rangeInput" type="range" min="0" max="24"
+                                        oninput="setMinimumRangeValue()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Standard font</div>
+                            <div class="rowSelectionMenu">
+                                <select class="selectionMenu" name="selectionMenu" id="standardFont"
+                                    onchange="selectStandardFont()">
+                                    <option>Arial</option>
+                                    <option>Bahnschrift</option>
+                                    <option>Calibri</option>
+                                    <option>Cambria</option>
+                                    <option>Cambria Math</option>
+                                    <option>Candara</option>
+                                    <option>Comic Sans MS</option>
+                                    <option>Consolas</option>
+                                    <option>Constantia</option>
+                                    <option>Corbel</option>
+                                    <option>Courier New</option>
+                                    <option>Ebrima</option>
+                                    <option>Franklin Gothic</option>
+                                    <option>Gabriola</option>
+                                    <option>Gadugi</option>
+                                    <option>Georgia</option>
+                                    <option>Impact</option>
+                                    <option>Ink Free</option>
+                                    <option>Javanese Text</option>
+                                    <option>Leelawadee UI</option>
+                                    <option>Lucida Console</option>
+                                    <option>Lucida Sans Unicode</option>
+                                    <option>Malgun Gothic</option>
+                                    <option>Microsoft Himalaya</option>
+                                    <option>Microsoft JhengHei</option>
+                                    <option>Microsoft JhengHei UI</option>
+                                    <option>Microsoft New Tai Lue</option>
+                                    <option>Microsoft PhagsPa</option>
+                                    <option>Microsoft Sans Serif</option>
+                                    <option>Microsoft Tai Le</option>
+                                    <option>Microsoft YaHei</option>
+                                    <option>Microsoft YaHei UI</option>
+                                    <option>Microsoft Yi Baiti</option>
+                                    <option>MingLiU-ExtB</option>
+                                    <option>PMingLiU-ExtB</option>
+                                    <option>MingLiU_HKSCS-ExtB</option>
+                                    <option>Mongolian Baiti</option>
+                                    <option>MS Gothic</option>
+                                    <option>MS UI Gothic</option>
+                                    <option>MS PGothic</option>
+                                    <option>MV Boli</option>
+                                    <option>Myanmar Text</option>
+                                    <option>Nirmala UI</option>
+                                    <option>Palatino Linotype</option>
+                                    <option>Segoe MDL2 Assets</option>
+                                    <option>Segoe Print</option>
+                                    <option>Segoe Script</option>
+                                    <option>Segoe UI</option>
+                                    <option>Segoe UI Emoji</option>
+                                    <option>Segoe UI Historic</option>
+                                    <option>Segoe UI Symbol</option>
+                                    <option>SimSun</option>
+                                    <option>NSimSun</option>
+                                    <option>SimSun-ExtB</option>
+                                    <option>Sitka Small</option>
+                                    <option>Sitka Text</option>
+                                    <option>Sitka Subheading</option>
+                                    <option>Sitka Heading</option>
+                                    <option>Sitka Display</option>
+                                    <option>Sitka Banner</option>
+                                    <option>Sylfaen</option>
+                                    <option>Symbol</option>
+                                    <option>Tahoma</option>
+                                    <option>Times New Roman</option>
+                                    <option>Trebuchet MS</option>
+                                    <option>Verdana</option>
+                                    <option>Webdings</option>
+                                    <option>Wingdings</option>
+                                    <option>Yu Gothic</option>
+                                    <option>Yu Gothic UI</option>
+                                    <option>HoloLens MDL2 Assets</option>
+                                    <option>Agency FB</option>
+                                    <option>Algerian</option>
+                                    <option>Book Antiqua</option>
+                                    <option>Arial Rounded MT</option>
+                                    <option>Baskerville Old Face</option>
+                                    <option>Bauhaus 93</option>
+                                    <option>Bell MT</option>
+                                    <option>Bernard MT</option>
+                                    <option>Bodoni MT</option>
+                                    <option>Bodoni MT Poster</option>
+                                    <option>Bookman Old Style</option>
+                                    <option>Bradley Hand ITC</option>
+                                    <option>Britannic</option>
+                                    <option>Berlin Sans FB</option>
+                                    <option>Broadway</option>
+                                    <option>Brush Script MT</option>
+                                    <option>Bookshelf Symbol 7</option>
+                                    <option>Californian FB</option>
+                                    <option>Calisto MT</option>
+                                    <option>Castellar</option>
+                                    <option>Century Schoolbook</option>
+                                    <option>Centaur</option>
+                                    <option>Century</option>
+                                    <option>Chiller</option>
+                                    <option>Colonna MT</option>
+                                    <option>Cooper</option>
+                                    <option>Copperplate Gothic</option>
+                                    <option>Curlz MT</option>
+                                    <option>Dubai</option>
+                                    <option>Elephant</option>
+                                    <option>Engravers MT</option>
+                                    <option>Eras ITC</option>
+                                    <option>Felix Titling</option>
+                                    <option>Forte</option>
+                                    <option>Franklin Gothic Book</option>
+                                    <option>Freestyle Script</option>
+                                    <option>French Script MT</option>
+                                    <option>Footlight MT</option>
+                                    <option>Garamond</option>
+                                    <option>Gigi</option>
+                                    <option>Gill Sans MT</option>
+                                    <option>Gill Sans</option>
+                                    <option>Gloucester MT</option>
+                                    <option>Century Gothic</option>
+                                    <option>Goudy Old Style</option>
+                                    <option>Goudy Stout</option>
+                                    <option>Harlow Solid</option>
+                                    <option>Harrington</option>
+                                    <option>Haettenschweiler</option>
+                                    <option>High Tower Text</option>
+                                    <option>Imprint MT Shadow</option>
+                                    <option>Informal Roman</option>
+                                    <option>Blackadder ITC</option>
+                                    <option>Edwardian Script ITC</option>
+                                    <option>Kristen ITC</option>
+                                    <option>Jokerman</option>
+                                    <option>Juice ITC</option>
+                                    <option>Kunstler Script</option>
+                                    <option>Wide Latin</option>
+                                    <option>Lucida Bright</option>
+                                    <option>Lucida Calligraphy</option>
+                                    <option>Leelawadee</option>
+                                    <option>Lucida Fax</option>
+                                    <option>Lucida Handwriting</option>
+                                    <option>Lucida Sans</option>
+                                    <option>Lucida Sans Typewriter</option>
+                                    <option>Magneto</option>
+                                    <option>Maiandra GD</option>
+                                    <option>Matura MT Script Capitals</option>
+                                    <option>Mistral</option>
+                                    <option>Modern No. 20</option>
+                                    <option>Microsoft Uighur</option>
+                                    <option>Monotype Corsiva</option>
+                                    <option>MT Extra</option>
+                                    <option>Niagara Engraved</option>
+                                    <option>Niagara Solid</option>
+                                    <option>OCR A</option>
+                                    <option>Old English Text MT</option>
+                                    <option>Onyx</option>
+                                    <option>MS Outlook</option>
+                                    <option>Palace Script MT</option>
+                                    <option>Papyrus</option>
+                                    <option>Parchment</option>
+                                    <option>Perpetua</option>
+                                    <option>Perpetua Titling MT</option>
+                                    <option>Playbill</option>
+                                    <option>Poor Richard</option>
+                                    <option>Pristina</option>
+                                    <option>Rage</option>
+                                    <option>Ravie</option>
+                                    <option>MS Reference Sans Serif</option>
+                                    <option>MS Reference Specialty</option>
+                                    <option>Rockwell</option>
+                                    <option>Script MT</option>
+                                    <option>Showcard Gothic</option>
+                                    <option>Snap ITC</option>
+                                    <option>Stencil</option>
+                                    <option>Tw Cen MT</option>
+                                    <option>Tempus Sans ITC</option>
+                                    <option>Viner Hand ITC</option>
+                                    <option>Vivaldi</option>
+                                    <option>Vladimir Script</option>
+                                    <option>Wingdings 2</option>
+                                    <option>Wingdings 3</option>
+                                    <option>Marlett</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Serif font</div>
+                            <div class="rowSelectionMenu">
+                                <select class="selectionMenu" name="selectionMenu" id="serifFont"
+                                    onchange="selectSerifFont()">
+                                    <option>Arial</option>
+                                    <option>Bahnschrift</option>
+                                    <option>Calibri</option>
+                                    <option>Cambria</option>
+                                    <option>Cambria Math</option>
+                                    <option>Candara</option>
+                                    <option>Comic Sans MS</option>
+                                    <option>Consolas</option>
+                                    <option>Constantia</option>
+                                    <option>Corbel</option>
+                                    <option>Courier New</option>
+                                    <option>Ebrima</option>
+                                    <option>Franklin Gothic</option>
+                                    <option>Gabriola</option>
+                                    <option>Gadugi</option>
+                                    <option>Georgia</option>
+                                    <option>Impact</option>
+                                    <option>Ink Free</option>
+                                    <option>Javanese Text</option>
+                                    <option>Leelawadee UI</option>
+                                    <option>Lucida Console</option>
+                                    <option>Lucida Sans Unicode</option>
+                                    <option>Malgun Gothic</option>
+                                    <option>Microsoft Himalaya</option>
+                                    <option>Microsoft JhengHei</option>
+                                    <option>Microsoft JhengHei UI</option>
+                                    <option>Microsoft New Tai Lue</option>
+                                    <option>Microsoft PhagsPa</option>
+                                    <option>Microsoft Sans Serif</option>
+                                    <option>Microsoft Tai Le</option>
+                                    <option>Microsoft YaHei</option>
+                                    <option>Microsoft YaHei UI</option>
+                                    <option>Microsoft Yi Baiti</option>
+                                    <option>MingLiU-ExtB</option>
+                                    <option>PMingLiU-ExtB</option>
+                                    <option>MingLiU_HKSCS-ExtB</option>
+                                    <option>Mongolian Baiti</option>
+                                    <option>MS Gothic</option>
+                                    <option>MS UI Gothic</option>
+                                    <option>MS PGothic</option>
+                                    <option>MV Boli</option>
+                                    <option>Myanmar Text</option>
+                                    <option>Nirmala UI</option>
+                                    <option>Palatino Linotype</option>
+                                    <option>Segoe MDL2 Assets</option>
+                                    <option>Segoe Print</option>
+                                    <option>Segoe Script</option>
+                                    <option>Segoe UI</option>
+                                    <option>Segoe UI Emoji</option>
+                                    <option>Segoe UI Historic</option>
+                                    <option>Segoe UI Symbol</option>
+                                    <option>SimSun</option>
+                                    <option>NSimSun</option>
+                                    <option>SimSun-ExtB</option>
+                                    <option>Sitka Small</option>
+                                    <option>Sitka Text</option>
+                                    <option>Sitka Subheading</option>
+                                    <option>Sitka Heading</option>
+                                    <option>Sitka Display</option>
+                                    <option>Sitka Banner</option>
+                                    <option>Sylfaen</option>
+                                    <option>Symbol</option>
+                                    <option>Tahoma</option>
+                                    <option>Times New Roman</option>
+                                    <option>Trebuchet MS</option>
+                                    <option>Verdana</option>
+                                    <option>Webdings</option>
+                                    <option>Wingdings</option>
+                                    <option>Yu Gothic</option>
+                                    <option>Yu Gothic UI</option>
+                                    <option>HoloLens MDL2 Assets</option>
+                                    <option>Agency FB</option>
+                                    <option>Algerian</option>
+                                    <option>Book Antiqua</option>
+                                    <option>Arial Rounded MT</option>
+                                    <option>Baskerville Old Face</option>
+                                    <option>Bauhaus 93</option>
+                                    <option>Bell MT</option>
+                                    <option>Bernard MT</option>
+                                    <option>Bodoni MT</option>
+                                    <option>Bodoni MT Poster</option>
+                                    <option>Bookman Old Style</option>
+                                    <option>Bradley Hand ITC</option>
+                                    <option>Britannic</option>
+                                    <option>Berlin Sans FB</option>
+                                    <option>Broadway</option>
+                                    <option>Brush Script MT</option>
+                                    <option>Bookshelf Symbol 7</option>
+                                    <option>Californian FB</option>
+                                    <option>Calisto MT</option>
+                                    <option>Castellar</option>
+                                    <option>Century Schoolbook</option>
+                                    <option>Centaur</option>
+                                    <option>Century</option>
+                                    <option>Chiller</option>
+                                    <option>Colonna MT</option>
+                                    <option>Cooper</option>
+                                    <option>Copperplate Gothic</option>
+                                    <option>Curlz MT</option>
+                                    <option>Dubai</option>
+                                    <option>Elephant</option>
+                                    <option>Engravers MT</option>
+                                    <option>Eras ITC</option>
+                                    <option>Felix Titling</option>
+                                    <option>Forte</option>
+                                    <option>Franklin Gothic Book</option>
+                                    <option>Freestyle Script</option>
+                                    <option>French Script MT</option>
+                                    <option>Footlight MT</option>
+                                    <option>Garamond</option>
+                                    <option>Gigi</option>
+                                    <option>Gill Sans MT</option>
+                                    <option>Gill Sans</option>
+                                    <option>Gloucester MT</option>
+                                    <option>Century Gothic</option>
+                                    <option>Goudy Old Style</option>
+                                    <option>Goudy Stout</option>
+                                    <option>Harlow Solid</option>
+                                    <option>Harrington</option>
+                                    <option>Haettenschweiler</option>
+                                    <option>High Tower Text</option>
+                                    <option>Imprint MT Shadow</option>
+                                    <option>Informal Roman</option>
+                                    <option>Blackadder ITC</option>
+                                    <option>Edwardian Script ITC</option>
+                                    <option>Kristen ITC</option>
+                                    <option>Jokerman</option>
+                                    <option>Juice ITC</option>
+                                    <option>Kunstler Script</option>
+                                    <option>Wide Latin</option>
+                                    <option>Lucida Bright</option>
+                                    <option>Lucida Calligraphy</option>
+                                    <option>Leelawadee</option>
+                                    <option>Lucida Fax</option>
+                                    <option>Lucida Handwriting</option>
+                                    <option>Lucida Sans</option>
+                                    <option>Lucida Sans Typewriter</option>
+                                    <option>Magneto</option>
+                                    <option>Maiandra GD</option>
+                                    <option>Matura MT Script Capitals</option>
+                                    <option>Mistral</option>
+                                    <option>Modern No. 20</option>
+                                    <option>Microsoft Uighur</option>
+                                    <option>Monotype Corsiva</option>
+                                    <option>MT Extra</option>
+                                    <option>Niagara Engraved</option>
+                                    <option>Niagara Solid</option>
+                                    <option>OCR A</option>
+                                    <option>Old English Text MT</option>
+                                    <option>Onyx</option>
+                                    <option>MS Outlook</option>
+                                    <option>Palace Script MT</option>
+                                    <option>Papyrus</option>
+                                    <option>Parchment</option>
+                                    <option>Perpetua</option>
+                                    <option>Perpetua Titling MT</option>
+                                    <option>Playbill</option>
+                                    <option>Poor Richard</option>
+                                    <option>Pristina</option>
+                                    <option>Rage</option>
+                                    <option>Ravie</option>
+                                    <option>MS Reference Sans Serif</option>
+                                    <option>MS Reference Specialty</option>
+                                    <option>Rockwell</option>
+                                    <option>Script MT</option>
+                                    <option>Showcard Gothic</option>
+                                    <option>Snap ITC</option>
+                                    <option>Stencil</option>
+                                    <option>Tw Cen MT</option>
+                                    <option>Tempus Sans ITC</option>
+                                    <option>Viner Hand ITC</option>
+                                    <option>Vivaldi</option>
+                                    <option>Vladimir Script</option>
+                                    <option>Wingdings 2</option>
+                                    <option>Wingdings 3</option>
+                                    <option>Marlett</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Sans Serif font</div>
+                            <div class="rowSelectionMenu">
+                                <select class="selectionMenu" name="selectionMenu" id="sansSerifFont"
+                                    onchange="selectSansSerifFont()">
+                                    <option>Arial</option>
+                                    <option>Bahnschrift</option>
+                                    <option>Calibri</option>
+                                    <option>Cambria</option>
+                                    <option>Cambria Math</option>
+                                    <option>Candara</option>
+                                    <option>Comic Sans MS</option>
+                                    <option>Consolas</option>
+                                    <option>Constantia</option>
+                                    <option>Corbel</option>
+                                    <option>Courier New</option>
+                                    <option>Ebrima</option>
+                                    <option>Franklin Gothic</option>
+                                    <option>Gabriola</option>
+                                    <option>Gadugi</option>
+                                    <option>Georgia</option>
+                                    <option>Impact</option>
+                                    <option>Ink Free</option>
+                                    <option>Javanese Text</option>
+                                    <option>Leelawadee UI</option>
+                                    <option>Lucida Console</option>
+                                    <option>Lucida Sans Unicode</option>
+                                    <option>Malgun Gothic</option>
+                                    <option>Microsoft Himalaya</option>
+                                    <option>Microsoft JhengHei</option>
+                                    <option>Microsoft JhengHei UI</option>
+                                    <option>Microsoft New Tai Lue</option>
+                                    <option>Microsoft PhagsPa</option>
+                                    <option>Microsoft Sans Serif</option>
+                                    <option>Microsoft Tai Le</option>
+                                    <option>Microsoft YaHei</option>
+                                    <option>Microsoft YaHei UI</option>
+                                    <option>Microsoft Yi Baiti</option>
+                                    <option>MingLiU-ExtB</option>
+                                    <option>PMingLiU-ExtB</option>
+                                    <option>MingLiU_HKSCS-ExtB</option>
+                                    <option>Mongolian Baiti</option>
+                                    <option>MS Gothic</option>
+                                    <option>MS UI Gothic</option>
+                                    <option>MS PGothic</option>
+                                    <option>MV Boli</option>
+                                    <option>Myanmar Text</option>
+                                    <option>Nirmala UI</option>
+                                    <option>Palatino Linotype</option>
+                                    <option>Segoe MDL2 Assets</option>
+                                    <option>Segoe Print</option>
+                                    <option>Segoe Script</option>
+                                    <option>Segoe UI</option>
+                                    <option>Segoe UI Emoji</option>
+                                    <option>Segoe UI Historic</option>
+                                    <option>Segoe UI Symbol</option>
+                                    <option>SimSun</option>
+                                    <option>NSimSun</option>
+                                    <option>SimSun-ExtB</option>
+                                    <option>Sitka Small</option>
+                                    <option>Sitka Text</option>
+                                    <option>Sitka Subheading</option>
+                                    <option>Sitka Heading</option>
+                                    <option>Sitka Display</option>
+                                    <option>Sitka Banner</option>
+                                    <option>Sylfaen</option>
+                                    <option>Symbol</option>
+                                    <option>Tahoma</option>
+                                    <option>Times New Roman</option>
+                                    <option>Trebuchet MS</option>
+                                    <option>Verdana</option>
+                                    <option>Webdings</option>
+                                    <option>Wingdings</option>
+                                    <option>Yu Gothic</option>
+                                    <option>Yu Gothic UI</option>
+                                    <option>HoloLens MDL2 Assets</option>
+                                    <option>Agency FB</option>
+                                    <option>Algerian</option>
+                                    <option>Book Antiqua</option>
+                                    <option>Arial Rounded MT</option>
+                                    <option>Baskerville Old Face</option>
+                                    <option>Bauhaus 93</option>
+                                    <option>Bell MT</option>
+                                    <option>Bernard MT</option>
+                                    <option>Bodoni MT</option>
+                                    <option>Bodoni MT Poster</option>
+                                    <option>Bookman Old Style</option>
+                                    <option>Bradley Hand ITC</option>
+                                    <option>Britannic</option>
+                                    <option>Berlin Sans FB</option>
+                                    <option>Broadway</option>
+                                    <option>Brush Script MT</option>
+                                    <option>Bookshelf Symbol 7</option>
+                                    <option>Californian FB</option>
+                                    <option>Calisto MT</option>
+                                    <option>Castellar</option>
+                                    <option>Century Schoolbook</option>
+                                    <option>Centaur</option>
+                                    <option>Century</option>
+                                    <option>Chiller</option>
+                                    <option>Colonna MT</option>
+                                    <option>Cooper</option>
+                                    <option>Copperplate Gothic</option>
+                                    <option>Curlz MT</option>
+                                    <option>Dubai</option>
+                                    <option>Elephant</option>
+                                    <option>Engravers MT</option>
+                                    <option>Eras ITC</option>
+                                    <option>Felix Titling</option>
+                                    <option>Forte</option>
+                                    <option>Franklin Gothic Book</option>
+                                    <option>Freestyle Script</option>
+                                    <option>French Script MT</option>
+                                    <option>Footlight MT</option>
+                                    <option>Garamond</option>
+                                    <option>Gigi</option>
+                                    <option>Gill Sans MT</option>
+                                    <option>Gill Sans</option>
+                                    <option>Gloucester MT</option>
+                                    <option>Century Gothic</option>
+                                    <option>Goudy Old Style</option>
+                                    <option>Goudy Stout</option>
+                                    <option>Harlow Solid</option>
+                                    <option>Harrington</option>
+                                    <option>Haettenschweiler</option>
+                                    <option>High Tower Text</option>
+                                    <option>Imprint MT Shadow</option>
+                                    <option>Informal Roman</option>
+                                    <option>Blackadder ITC</option>
+                                    <option>Edwardian Script ITC</option>
+                                    <option>Kristen ITC</option>
+                                    <option>Jokerman</option>
+                                    <option>Juice ITC</option>
+                                    <option>Kunstler Script</option>
+                                    <option>Wide Latin</option>
+                                    <option>Lucida Bright</option>
+                                    <option>Lucida Calligraphy</option>
+                                    <option>Leelawadee</option>
+                                    <option>Lucida Fax</option>
+                                    <option>Lucida Handwriting</option>
+                                    <option>Lucida Sans</option>
+                                    <option>Lucida Sans Typewriter</option>
+                                    <option>Magneto</option>
+                                    <option>Maiandra GD</option>
+                                    <option>Matura MT Script Capitals</option>
+                                    <option>Mistral</option>
+                                    <option>Modern No. 20</option>
+                                    <option>Microsoft Uighur</option>
+                                    <option>Monotype Corsiva</option>
+                                    <option>MT Extra</option>
+                                    <option>Niagara Engraved</option>
+                                    <option>Niagara Solid</option>
+                                    <option>OCR A</option>
+                                    <option>Old English Text MT</option>
+                                    <option>Onyx</option>
+                                    <option>MS Outlook</option>
+                                    <option>Palace Script MT</option>
+                                    <option>Papyrus</option>
+                                    <option>Parchment</option>
+                                    <option>Perpetua</option>
+                                    <option>Perpetua Titling MT</option>
+                                    <option>Playbill</option>
+                                    <option>Poor Richard</option>
+                                    <option>Pristina</option>
+                                    <option>Rage</option>
+                                    <option>Ravie</option>
+                                    <option>MS Reference Sans Serif</option>
+                                    <option>MS Reference Specialty</option>
+                                    <option>Rockwell</option>
+                                    <option>Script MT</option>
+                                    <option>Showcard Gothic</option>
+                                    <option>Snap ITC</option>
+                                    <option>Stencil</option>
+                                    <option>Tw Cen MT</option>
+                                    <option>Tempus Sans ITC</option>
+                                    <option>Viner Hand ITC</option>
+                                    <option>Vivaldi</option>
+                                    <option>Vladimir Script</option>
+                                    <option>Wingdings 2</option>
+                                    <option>Wingdings 3</option>
+                                    <option>Marlett</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Fixed font</div>
+                            <div class="rowSelectionMenu">
+                                <select class="selectionMenu" name="selectionMenu" id="fixedFont"
+                                    onchange="selectFixedFont()">
+                                    <option>Arial</option>
+                                    <option>Bahnschrift</option>
+                                    <option>Calibri</option>
+                                    <option>Cambria</option>
+                                    <option>Cambria Math</option>
+                                    <option>Candara</option>
+                                    <option>Comic Sans MS</option>
+                                    <option>Consolas</option>
+                                    <option>Constantia</option>
+                                    <option>Corbel</option>
+                                    <option>Courier New</option>
+                                    <option>Ebrima</option>
+                                    <option>Franklin Gothic</option>
+                                    <option>Gabriola</option>
+                                    <option>Gadugi</option>
+                                    <option>Georgia</option>
+                                    <option>Impact</option>
+                                    <option>Ink Free</option>
+                                    <option>Javanese Text</option>
+                                    <option>Leelawadee UI</option>
+                                    <option>Lucida Console</option>
+                                    <option>Lucida Sans Unicode</option>
+                                    <option>Malgun Gothic</option>
+                                    <option>Microsoft Himalaya</option>
+                                    <option>Microsoft JhengHei</option>
+                                    <option>Microsoft JhengHei UI</option>
+                                    <option>Microsoft New Tai Lue</option>
+                                    <option>Microsoft PhagsPa</option>
+                                    <option>Microsoft Sans Serif</option>
+                                    <option>Microsoft Tai Le</option>
+                                    <option>Microsoft YaHei</option>
+                                    <option>Microsoft YaHei UI</option>
+                                    <option>Microsoft Yi Baiti</option>
+                                    <option>MingLiU-ExtB</option>
+                                    <option>PMingLiU-ExtB</option>
+                                    <option>MingLiU_HKSCS-ExtB</option>
+                                    <option>Mongolian Baiti</option>
+                                    <option>MS Gothic</option>
+                                    <option>MS UI Gothic</option>
+                                    <option>MS PGothic</option>
+                                    <option>MV Boli</option>
+                                    <option>Myanmar Text</option>
+                                    <option>Nirmala UI</option>
+                                    <option>Palatino Linotype</option>
+                                    <option>Segoe MDL2 Assets</option>
+                                    <option>Segoe Print</option>
+                                    <option>Segoe Script</option>
+                                    <option>Segoe UI</option>
+                                    <option>Segoe UI Emoji</option>
+                                    <option>Segoe UI Historic</option>
+                                    <option>Segoe UI Symbol</option>
+                                    <option>SimSun</option>
+                                    <option>NSimSun</option>
+                                    <option>SimSun-ExtB</option>
+                                    <option>Sitka Small</option>
+                                    <option>Sitka Text</option>
+                                    <option>Sitka Subheading</option>
+                                    <option>Sitka Heading</option>
+                                    <option>Sitka Display</option>
+                                    <option>Sitka Banner</option>
+                                    <option>Sylfaen</option>
+                                    <option>Symbol</option>
+                                    <option>Tahoma</option>
+                                    <option>Times New Roman</option>
+                                    <option>Trebuchet MS</option>
+                                    <option>Verdana</option>
+                                    <option>Webdings</option>
+                                    <option>Wingdings</option>
+                                    <option>Yu Gothic</option>
+                                    <option>Yu Gothic UI</option>
+                                    <option>HoloLens MDL2 Assets</option>
+                                    <option>Agency FB</option>
+                                    <option>Algerian</option>
+                                    <option>Book Antiqua</option>
+                                    <option>Arial Rounded MT</option>
+                                    <option>Baskerville Old Face</option>
+                                    <option>Bauhaus 93</option>
+                                    <option>Bell MT</option>
+                                    <option>Bernard MT</option>
+                                    <option>Bodoni MT</option>
+                                    <option>Bodoni MT Poster</option>
+                                    <option>Bookman Old Style</option>
+                                    <option>Bradley Hand ITC</option>
+                                    <option>Britannic</option>
+                                    <option>Berlin Sans FB</option>
+                                    <option>Broadway</option>
+                                    <option>Brush Script MT</option>
+                                    <option>Bookshelf Symbol 7</option>
+                                    <option>Californian FB</option>
+                                    <option>Calisto MT</option>
+                                    <option>Castellar</option>
+                                    <option>Century Schoolbook</option>
+                                    <option>Centaur</option>
+                                    <option>Century</option>
+                                    <option>Chiller</option>
+                                    <option>Colonna MT</option>
+                                    <option>Cooper</option>
+                                    <option>Copperplate Gothic</option>
+                                    <option>Curlz MT</option>
+                                    <option>Dubai</option>
+                                    <option>Elephant</option>
+                                    <option>Engravers MT</option>
+                                    <option>Eras ITC</option>
+                                    <option>Felix Titling</option>
+                                    <option>Forte</option>
+                                    <option>Franklin Gothic Book</option>
+                                    <option>Freestyle Script</option>
+                                    <option>French Script MT</option>
+                                    <option>Footlight MT</option>
+                                    <option>Garamond</option>
+                                    <option>Gigi</option>
+                                    <option>Gill Sans MT</option>
+                                    <option>Gill Sans</option>
+                                    <option>Gloucester MT</option>
+                                    <option>Century Gothic</option>
+                                    <option>Goudy Old Style</option>
+                                    <option>Goudy Stout</option>
+                                    <option>Harlow Solid</option>
+                                    <option>Harrington</option>
+                                    <option>Haettenschweiler</option>
+                                    <option>High Tower Text</option>
+                                    <option>Imprint MT Shadow</option>
+                                    <option>Informal Roman</option>
+                                    <option>Blackadder ITC</option>
+                                    <option>Edwardian Script ITC</option>
+                                    <option>Kristen ITC</option>
+                                    <option>Jokerman</option>
+                                    <option>Juice ITC</option>
+                                    <option>Kunstler Script</option>
+                                    <option>Wide Latin</option>
+                                    <option>Lucida Bright</option>
+                                    <option>Lucida Calligraphy</option>
+                                    <option>Leelawadee</option>
+                                    <option>Lucida Fax</option>
+                                    <option>Lucida Handwriting</option>
+                                    <option>Lucida Sans</option>
+                                    <option>Lucida Sans Typewriter</option>
+                                    <option>Magneto</option>
+                                    <option>Maiandra GD</option>
+                                    <option>Matura MT Script Capitals</option>
+                                    <option>Mistral</option>
+                                    <option>Modern No. 20</option>
+                                    <option>Microsoft Uighur</option>
+                                    <option>Monotype Corsiva</option>
+                                    <option>MT Extra</option>
+                                    <option>Niagara Engraved</option>
+                                    <option>Niagara Solid</option>
+                                    <option>OCR A</option>
+                                    <option>Old English Text MT</option>
+                                    <option>Onyx</option>
+                                    <option>MS Outlook</option>
+                                    <option>Palace Script MT</option>
+                                    <option>Papyrus</option>
+                                    <option>Parchment</option>
+                                    <option>Perpetua</option>
+                                    <option>Perpetua Titling MT</option>
+                                    <option>Playbill</option>
+                                    <option>Poor Richard</option>
+                                    <option>Pristina</option>
+                                    <option>Rage</option>
+                                    <option>Ravie</option>
+                                    <option>MS Reference Sans Serif</option>
+                                    <option>MS Reference Specialty</option>
+                                    <option>Rockwell</option>
+                                    <option>Script MT</option>
+                                    <option>Showcard Gothic</option>
+                                    <option>Snap ITC</option>
+                                    <option>Stencil</option>
+                                    <option>Tw Cen MT</option>
+                                    <option>Tempus Sans ITC</option>
+                                    <option>Viner Hand ITC</option>
+                                    <option>Vivaldi</option>
+                                    <option>Vladimir Script</option>
+                                    <option>Wingdings 2</option>
+                                    <option>Wingdings 3</option>
+                                    <option>Marlett</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">On startup</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Open the start page</div>
+                        <label class="checkBx">
+                            <input class="checkBInput startPageOption" type="radio" name="radioStart"
+                                onclick="selectStartPageOption()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Continue where you left off</div>
+                        <label class="checkBx">
+                            <input class="checkBInput startPageOption" type="radio" name="radioStart"
+                                onclick="selectStartPageOption()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Open one or many specific pages</div>
+                        <label class="checkBx">
+                            <input class="checkBInput startPageOption" type="radio" name="radioStart"
+                                onclick="selectStartPageOption()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="specificPageOption">
+                        <div class="rowDetail">Start page is assume if none</div>
+                        <button class="rowButton" onclick="addSpecificPage()">
+                            <div class="rButtonText">Add page</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                        <!-- <div class="specificPageContainer">
+                        </div>-->
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Privacy and security - Javascript</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow sites to run javascript</div>
+                        <label class="switch">
+                            <input class="switchInput" id="enableJavascript" type="checkbox"
+                                onclick="allowJavascript()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow scripts to copy from and write to clipboard</div>
+                        <label class="switch">
+                            <input class="switchInput" id="enableJSCopyPaste" type="checkbox"
+                                onclick="allowJSCopyPaste()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow scripts to send pop-ups</div>
+                        <label class="switch">
+                            <input class="switchInput" id="enableJSPopUps" type="checkbox" onclick="allowJSPopUps()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="containerTitle">Privacy and security - Security</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Enable plugins</div>
+                        <label class="switch">
+                            <input class="switchInput" id="plugins" type="checkbox" onclick="enablePlugins()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow running content from insecure websites (not recommended)</div>
+                        <label class="switch">
+                            <input class="switchInput" id="insecureContents" type="checkbox"
+                                onclick="allowInsecureContents()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow geolocation for insecure websites (not recommended)</div>
+                        <label class="switch">
+                            <input class="switchInput" id="insecureGeolocation" type="checkbox"
+                                onclick="enableInsecureGeolocation()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow geolocation for websites</div>
+                        <label class="switch">
+                            <input class="switchInput" id="geolocation" type="checkbox" onclick="enableGeolocation()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Try to pre-fetch DNS entries to speed up browsing</div>
+                        <label class="switch">
+                            <input class="switchInput" id="dnsPrefetch" type="checkbox" onclick="enableDnsPrefetch()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Manage HTTPS/SSL certificates</div>
+                        <button class="rowButton" onclick="manageCertificates()">
+                            <div class="rButtonText">Manage</div>
+                        </button>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Enable PDF documents to be opened in Ololan</div>
+                        <label class="switch">
+                            <input class="switchInput" id="pdfInternalView" type="checkbox"
+                                onclick="enableInternalPDFViewer()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow websites to use microphone</div>
+                        <label class="switch">
+                            <input class="switchInput" id="microphone" type="checkbox" onclick="enableMicrophone()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow websites to use camera</div>
+                        <label class="switch">
+                            <input class="switchInput" id="camera" type="checkbox" onclick="enableCamera()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="containerTitle">Privacy and security - Web protection</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Use strong web protection</div>
+                        <label class="checkBx">
+                            <input class="checkBInput webProtection" type="radio" name="radioProtection"
+                                onclick="selectWebProtection()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <ul>
+                            <li>Blocks trackers from all websites.</li>
+                            <li>Improves your security on the web.</li>
+                            <li>Some features may not work on some websites.</li>
+                        </ul>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Use standard web protection</div>
+                        <label class="checkBx">
+                            <input class="checkBInput webProtection" type="radio" name="radioProtection"
+                                onclick="selectWebProtection()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <ul>
+                            <li>Blocks trackers from dangerous websites.</li>
+                            <li>Blocks trackers in private browsing.</li>
+                            <li>Improves your security on the web.</li>
+                            <li>Features will work as expected on websites.</li>
+                        </ul>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Don't use any web protection (not recommended)</div>
+                        <label class="checkBx">
+                            <input class="checkBInput webProtection" type="radio" name="radioProtection"
+                                onclick="selectWebProtection()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <ul>
+                            <li>Allows trackers from all websites.</li>
+                            <li>Not improves your security on the web.</li>
+                            <li>Features will work as expected on websites.</li>
+                            <li>Your online security will be in danger.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Personal data - Passwords</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Ask to save passwords for websites</div>
+                        <label class="switch">
+                            <input class="switchInput" id="savePassword" type="checkbox" onclick="askToSavePassword()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Auto Sign-in to websites using saved credentials</div>
+                        <label class="switch">
+                            <input class="switchInput" id="autoSignToWebsites" type="checkbox"
+                                onclick="websiteAutoSignIn()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">View saved credentials</div>
+                        <button class="rowButton" onclick="showSavedCredentials(event)">
+                            <div class="rButtonText">Show</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                    </div>
+                    <!--<div class="containerTitle">Personal data - Payment methods</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Auto save and fill Payment methods</div>
+                        <label class="switch">
+                            <input class="switchInput" id="paymentMethods" type="checkbox" onclick="autoSavePaymentMethods()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">View saved payment methods</div>
+                        <button class="rowButton" onclick="showPaymentMethod(event)">
+                            <div class="rButtonText">Show</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                    </div>-->
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Browsing data</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Allow cookies</div>
+                        <label class="checkBx">
+                            <input class="checkBInput cookiePolicy" type="radio" name="radioCookie"
+                                onclick="selectCookiesPolicy()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <span>
+                            When turned on, third-party websites can use cookies to make your online experience easier,
+                            <br>like keeping you signed in, remembering your site preferences,
+                            and giving you customized services<br> or content based on your web activity.
+                        </span>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Block third-party cookies</div>
+                        <label class="checkBx">
+                            <input class="checkBInput cookiePolicy" type="radio" name="radioCookie"
+                                onclick="selectCookiesPolicy()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <span>
+                            When turned on, third-party websites can't use cookies to customized your online
+                            experience.<br>Features that will require third-party cookies may not work on some sites.
+                        </span>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Block cookies (Not recommended)</div>
+                        <label class="checkBx">
+                            <input class="checkBInput cookiePolicy" type="radio" name="radioCookie"
+                                onclick="selectCookiesPolicy()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRowDetails">
+                        <span>
+                            Some features on some websites may not work as expected.
+                        </span>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Delete cookies and sites data when you close Ololan</div>
+                        <label class="switch">
+                            <input class="switchInput" id="deleteCookies" type="checkbox"
+                                onclick="deleteCookiesOnClose()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Send a "Do Not Track" request to websites</div>
+                        <label class="switch">
+                            <input class="switchInput" id="doNotTrack" type="checkbox" onclick="enableDoNotTrack()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Clear browsing data</div>
+                        <div style="width: 8%; min-width: 1px; max-width: 10%;"></div>
+                        <button id="clbButton" onclick="clearBrowsingData()">
+                            <div class="rButtonText">Clear</div>
+                        </button>
+                        <button class="rowButton" onclick="showBrowingDataMenu(event)">
+                            <div class="rButtonText">Manage data</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                        <div class="optionRow">
+                            <div class="rowDetail">Cookies and sites data</div>
+                            <div class="rowDetail" id="cookieSize">16Mo</div>
+                            <label class="checkBxB">
+                                <input class="checkBInputB" id="cookieAndData" type="checkbox">
+                                <span class="checkmarkB"></span>
+                            </label>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Cached images and files</div>
+                            <div class="rowDetail" id="cacheSize">16Mo</div>
+                            <label class="checkBxB">
+                                <input class="checkBInputB" id="cachedData" type="checkbox">
+                                <span class="checkmarkB"></span>
+                            </label>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Browsing history</div>
+                            <div class="rowDetail" id="browsingHistorySize">16Mo</div>
+                            <label class="checkBxB">
+                                <input class="checkBInputB" id="browsingHistory" type="checkbox">
+                                <span class="checkmarkB"></span>
+                            </label>
+                        </div>
+                        <div class="optionRow">
+                            <div class="rowDetail">Saved passwords</div>
+                            <div class="rowDetail" id="passwordDataSize">16Mo</div>
+                            <label class="checkBxB">
+                                <input class="checkBInputB" id="passwordData" type="checkbox">
+                                <span class="checkmarkB"></span>
+                            </label>
+                        </div>
+                        <!--<div class="optionRow">
+                            <div class="rowDetail">Saved payment methods</div>
+                            <div class="rowDetail" id="paymentDataSize">16Mo</div>
+                            <label class="checkBxB">
+                                <input class="checkBInputB" id="paymentData" type="checkbox">
+                                <span class="checkmarkB"></span>
+                            </label>
+                        </div>-->
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">View and manage cookies</div>
+                        <div style="width: 20%; min-width: 1px; max-width: 50%;"></div>
+                        <button id="clcButton" onclick="clearAllCookies()">
+                            <div class="rButtonText">Clear all</div>
+                        </button>
+                        <button class="rowButton" onclick="showCookiesMenu(event)">
+                            <div class="rButtonText">Manage cookies</div>
+                        </button>
+                    </div>
+                    <div class="optionRowContent">
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Search engine</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Add new search engine</div>
+                        <button class="rowButton" onclick="openSEDialogBoxA()">
+                            <div class="rButtonText">Add</div>
+                        </button>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Google</div>
+                        <div class="rowDetail">google.com</div>
+                        <label class="checkBx">
+                            <input class="checkBInput searchEngine" type="radio" name="radioSearch"
+                                onclick="selectDefaultSearchEngine()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Bing</div>
+                        <div class="rowDetail">bing.com</div>
+                        <label class="checkBx">
+                            <input class="checkBInput searchEngine" type="radio" name="radioSearch"
+                                onclick="selectDefaultSearchEngine()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Yahoo</div>
+                        <div class="rowDetail">yahoo.com</div>
+                        <label class="checkBx">
+                            <input class="checkBInput searchEngine" type="radio" name="radioSearch"
+                                onclick="selectDefaultSearchEngine()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">DuckDuckGo</div>
+                        <div class="rowDetail">duckduckgo.com</div>
+                        <label class="checkBx">
+                            <input class="checkBInput searchEngine" type="radio" name="radioSearch"
+                                onclick="selectDefaultSearchEngine()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Languages</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Ololan UI language</div>
+                        <div class="rowSelectionMenu">
+                            <select class="selectionMenu" name="selectionMenu" id="ololanLanguage"
+                                onchange="selectUILanguage()">
+                                <option>English</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Spell check language</div>
+                        <div class="rowSelectionMenu">
+                            <select class="selectionMenu" name="selectionMenu" id="spellCheckLanguage"
+                                onchange="selectSpellCheckLanguage()">
+                                <option>English</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Downloads</div>
+                    <div class="optionRow">
+                        <div class="rowDetail" id="downloadPath">C:\Users\danie\Downloads</div>
+                        <button class="rowButton" onclick="selectDownloadLocation()">
+                            <div class="rButtonText">Select</div>
+                        </button>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Ask for location before downloading</div>
+                        <label class="switch">
+                            <input class="switchInput" id="downloadLocation" type="checkbox"
+                                onclick="askDownloadLocation()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Ololan Eina</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Enable Ololan Eina</div>
+                        <label class="switch">
+                            <input class="switchInput" id="ololanAssistant" type="checkbox"
+                                onclick="enableOlolanAssistant()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!--<div class="optionRow">
+                        <div class="rowDetail">Clear all activities data</div>
+                        <button class="rowButton" onclick="clearAssistantData()">
+                            <div class="rButtonText">Clear data</div>
+                        </button>
+                    </div>-->
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Default browser</div>
+                    <div class="optionRow" id="defBrowserButton">
+                        <div class="rowDetail">Make Ololan your default browser</div>
+                        <button class="rowButton" onclick="setDefaultBrowser()">
+                            <div class="rButtonText">Make default</div>
+                        </button>
+                    </div>
+                    <div class="optionRow" id="defaultBrowser">
+                        <div class="rowDetail">Ololan is your default browser</div>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">System</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Use 2D Canvas acceleration when available</div>
+                        <label class="switch">
+                            <input class="switchInput" id="canvasAcceleration" type="checkbox"
+                                onclick="useCanvasAcceleration()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Use WebGL acceleration when available</div>
+                        <label class="switch">
+                            <input class="switchInput" id="webGLAcceleration" type="checkbox"
+                                onclick="useWebGLAcceleration()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Manage system's proxy settings</div>
+                        <button class="rowButton" onclick="manageProxy()">
+                            <div class="rButtonText">Open proxy settings</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div class="containerTitle">Restore settings</div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Restore settings to their default states</div>
+                        <button class="rowButton" onclick="restoreSettings()">
+                            <div class="rButtonText">Reset</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="optionContainer">
+                    <div id="aboutOlolan">
+                        <img id="Ologo" src="../images/ololanLogo.png">
+                        <div id="logoTitle">Ololan</div>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">
+                            <span>Version 3.1.673.33 - 64 bit - </span>
+                            <span id="versionText">Ololan is up to date</span>
+                        </div>
+                        <button class="rowButton" id="updateCheckButton" onclick="updateOlolan()">
+                            <div class="rButtonText">Check for updates</div>
+                        </button>
+                        <button class="rowButton" id="updateDownloadButton" onclick="downloadAvailableUpdates()">
+                            <div class="rButtonText">Download updates</div>
+                        </button>
+                    </div>
+                    <div class="optionRow">
+                        <div>
+                            Ololan is made possible by the <a class="aboutLink" href="https://www.chromium.org"
+                                target="_blank">Chromium</a> open source project, the <a class="aboutLink"
+                                href="https://www.qt.io" target="_blank">Qt</a> open source library
+                            and <a class="aboutLink" href="https://www.iconmonstr.com" target="_blank">iconmonstr</a>.
+                        </div>
+                    </div>
+                    <div class="optionRow">
+                        <div class="rowDetail">Copyright 2022 - 2024 Ololan LLC All rights reserved.</div>
+                        <a class="aboutLink" href="https://legals.ololan.com" target="_blank">Terms of use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialogContainer">
+            <div id="sEngineDialogBoxA">
+                <div class="dialogTitle">Add search engine</div>
+                <div class="dialogBody">
+                    <div class="fieldTitle">Search engine</div>
+                    <div class="dialogField">
+                        <input type="text" id="nameInput" placeholder="Enter search engine">
+                    </div>
+                    <div class="fieldTitle">Shortcut</div>
+                    <div class="dialogField">
+                        <input type="text" id="shortcutInput" placeholder="Enter shortcut">
+                    </div>
+                    <div class="fieldTitle">Url</div>
+                    <div class="dialogField">
+                        <input type="url" id="urlInput" placeholder="Enter url">
+                    </div>
+                </div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeSEDialogBox()">Cancel</button>
+                    <button type="button" class="saveButton" onclick="saveSearchEngine()">Save</button>
+                </div>
+            </div>
+            <div id="sEngineDialogBoxB">
+                <div class="dialogTitle">Edit search engine</div>
+                <div class="dialogBody">
+                    <div class="fieldTitle">Search engine</div>
+                    <div class="dialogField">
+                        <input type="text" id="nameInputEdit" placeholder="Enter search engine">
+                    </div>
+                    <div class="fieldTitle">Shortcut</div>
+                    <div class="dialogField">
+                        <input type="text" id="shortcutInputEdit" placeholder="Enter shortcut">
+                    </div>
+                    <div class="fieldTitle">Url</div>
+                    <div class="dialogField">
+                        <input type="url" id="urlInputEdit" placeholder="Enter url">
+                    </div>
+                </div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeSEDialogBox()">Cancel</button>
+                    <button type="button" class="saveButton" onclick="editSearchEngine()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

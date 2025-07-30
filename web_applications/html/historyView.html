@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ololan history</title>
+    <link rel="stylesheet" type="text/css" href="../css/historyStyles.css">
+    <link rel="icon" href="../../images/historyIcon.png">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/historyScript.js"></script>
+</head>
+
+<body>
+    <div id="pageToolBar">
+        <div id="headerA">
+            <div id="ololanLogo">
+                <img id="logo" src="../images/ololanLogo.png">
+                <div id="pageTitle">history</div>
+            </div>
+        </div>
+        <div id="headerB">
+            <div id="searchBox">
+                <img src="../../images/find.png" id="searchBoxIcon">
+                <input type="search" id="searchInput" placeholder="Search in History" oninput="searchInHistory()" onfocus="setFocusInStyle()" onfocusout="setFocusOutStyle()">
+            </div>
+        </div>
+    </div>
+    <div id="pageBody">
+        <div id="leftSection">
+            <button type="button" id="thisPCButton" onclick="loadThisPCHistory()">
+                <img src="../images/bookmarkFolder.png" id="folderIcon">
+                <div id="buttonText">This PC</div>
+            </button>
+            <button type="button" id="clearButton" onclick="openDialogBoxTwo()">
+                <div id="buttonText">Clear browsing data</div>
+            </button>
+        </div>
+        <div id="rightSection">
+            <div id="controlBar"></div>
+            <div id="itemList" onscroll="contentScroll()">
+                <div id="historyItemContainer">
+                    <div class="emptyView">
+                        <div class="eViewMessage">
+                            <span>Let's browse the web !</span><br/>
+                            <span>Go to the address bar and type something.</span><br/>
+                            <span>Your browsing history will be show up here.</span>
+                        </div>
+                    </div>
+                    <div class="noResult">
+                        <div class="noResultMessage">
+                            <span>Sorry, no occurrences found.</span><br/>
+                            <span>Only pages you browsed from this PC appear here.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialogContainer">
+            <div id="dialogBoxOne">
+                <div id="dialogTitle">Remove browsing date</div>
+                <div id="dialogMessage">Do you really want to remove all the pages of this date from your history ?</div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeDialogBoxOne()">Cancel</button>
+                    <button type="button" class="removeButton" onclick="removeGroupItem()">Remove</button>
+                </div>
+            </div>
+            <div id="dialogBoxTwo">
+                <div id="dialogTitle">Clear browsing data</div>
+                <div id="dialogMessage">This will remove all pages from your history, coockies and cache can be deleted in "settings->Browsing data".</div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeDialogBoxTwo()">Cancel</button>
+                    <button type="button" class="removeButton" onclick="clearBrowsingData()">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

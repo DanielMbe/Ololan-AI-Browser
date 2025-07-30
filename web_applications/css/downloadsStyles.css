@@ -1,0 +1,735 @@
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+#pageToolBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    height: 69px;
+    max-height: 69px;
+    width: 100%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-top: 0.9%;
+    padding-bottom: 0.9%;
+    position: sticky;
+    background-color: white;
+}
+
+#headerA {
+    display: flex;
+    justify-content: flex-start;
+    height: max-content;
+    width: 9%;
+    min-width: fit-content;
+    padding-left: 0.5%;
+}
+
+#headerB {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 81.7%;
+}
+
+#headerC {
+    display: flex;
+    justify-content: flex-end;
+    height: max-content;
+    width: 9%;
+    min-width: fit-content;
+    padding-right: 0.5%;
+}
+
+#ololanLogo {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 7px;
+}
+
+#logo {
+    height: 32px;
+    width: 32px;
+}
+
+#pageTitle {
+    height: fit-content;
+    font-size: 14px;
+    font-weight: normal;
+    color: #56bcc5;
+    margin-left: 4px;
+    margin-top: 6.5px;
+}
+
+#searchBox {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 40px;
+    width: 60%;
+    border: 1px solid #f7f7f9;
+    border-radius: 4px;
+    background-color: #fbfbfd;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 2px;
+}
+
+#searchBox:focus-within,
+#searchBox:focus-within:hover {
+    border: 2px solid #68e7f0;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    padding-left: 4px;
+    padding-right: 0px;
+    padding-top: 0px;
+    transition: border-color .11s linear;
+}
+
+#searchBox:hover {
+    border: 1px solid #68e7f0;
+    transition: border-color .11s linear;
+}
+
+#searchInput {
+    background-color: transparent;
+    color: #606060;
+    height: 36px;
+    width: 96.5%;
+    margin-left: 3px;
+    padding-bottom: 2px;
+    padding-right: 3px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#searchInput:focus {
+    color: #656565;
+}
+
+#searchInput,
+#searchInput::placeholder {
+    font-size: 14.3px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#searchInput::placeholder {
+    color: #b6b6b6;
+}
+
+#searchInput::-webkit-search-cancel-button {
+    position: relative;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background-image: url(../../images/closeTwo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#searchInput:focus::-webkit-search-cancel-button {
+    background-image: url(../images/cancelTyping.png);
+}
+
+#searchBoxIcon {
+    height: 16px;
+    width: 16px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+#clearButton,
+#openFolderButton {
+    height: 33px;
+    width: 33px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 16px;
+    outline: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+#clearButton:hover,
+#openFolderButton:hover {
+    background-color: #efeff1;
+}
+
+#clearButton:active,
+#openFolderButton:active {
+    background-color: #dfdfe1;
+}
+
+#clearButton {
+    background-image: url("../images/trash.png");
+}
+
+#openFolderButton {
+    background-image: url("../images/downloadsFolder.png");
+}
+
+#pageBody {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 89%;
+    max-height: 89%;
+    min-height: 10px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+}
+
+#downloadSection {
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    min-height: 1%;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+#controlBar {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #f4f4f6;
+    padding: 0px;
+    transition: box-shadow .18s linear;
+    transition: height .11s linear;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#itemView {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 99.9%;
+    width: 100%;
+    max-height: 99.9%;
+    min-height: 100px;
+    min-width: max-content;
+}
+
+#itemView::-webkit-scrollbar,
+#folderSection::-webkit-scrollbar {
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    width: 9px;
+    background-color: #f2f5f5;
+}
+
+#itemView::-webkit-scrollbar-thumb,
+#folderSection::-webkit-scrollbar-thumb {
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    min-height: 5px;
+    background-color: #56bcc5;
+}
+
+#itemList {
+    display: block;
+    height: 100%;
+    width: 50%;
+    max-height: max-content;
+    min-height: fit-content;
+    min-width: 10px;
+}
+
+.downloadedDate {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #d9d9db;
+    height: 32px;
+    width: 40%;
+    min-width: max-content;
+    font-size: 14px;
+    font-weight: bold;
+    color: #656565;
+    margin-top: 0.9%;
+    padding-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #f4f4f6;
+    border-left: 7px solid #56bcc5;
+    border-radius: 3px;
+    background-color: #f9f9fb;
+    opacity: 1.0;
+}
+
+.downloadedDate.hide {
+    transition: .11s linear;
+    opacity: 0.0 !important;
+    height: 16px !important;
+}
+
+.dayDate {
+    box-sizing: border-box;
+    height: 100%;
+    width: 80%;
+    min-width: max-content;
+}
+
+.deleteButton {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    margin-top: 2.5px;
+    cursor: pointer;
+    background-image: url(../../images/closeOne.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+}
+
+.deleteButton:hover {
+    background-image: url(../../images/closeTwo.png);
+}
+
+.item {
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: 1px 1px 2px #d9d9db;
+    box-sizing: border-box;
+    height: 104px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 10px;
+    border: 1px solid #f9f9fb;
+    border-radius: 4px;
+    background-color: #fdfdff;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    opacity: 1.0;
+}
+
+.item.hide {
+    transition: .12s linear;
+    opacity: 0.0 !important;
+    height: 52px !important;
+}
+
+.iconSection,
+.itemData {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.iconSection {
+    margin-left: 1.35%;
+    width: fit-content;
+    max-width: 52px;
+}
+
+.itemData {
+    width: 90.5%;
+    min-width: 10px;
+}
+
+.itemIcon {
+    height: 52px;
+    width: 52px;
+}
+
+.itemUrl,
+.itemTitle,
+.itemTransfertData,
+.itemControls {
+    box-sizing: border-box;
+    padding-left: 20px;
+    min-width: 1%;
+}
+
+.urlLink {
+    height: fit-content;
+    width: min-content;
+    min-width: 10px;
+    text-decoration: none;
+    color: #656565;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.urlLink:hover {
+    color: #56bcc5;
+}
+
+.itemUrl,
+.itemTitle {
+    height: fit-content;
+    width: auto;
+    min-width: 10px;
+    font-size: 13.5px;
+    color: #656565;
+    align-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.itemTransfertData,
+.itemControls {
+    height: fit-content;
+    width: 99%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.itemControls {
+    margin-bottom: 3px;
+}
+
+.progressBar {
+    margin-top: 9.5px;
+}
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+    height: 9px;
+    width: 87.4%;
+    min-width: 1%;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #e9e9eb;
+    border-radius: 4px;
+}
+
+progress[value]::-webkit-progress-value {
+    background-color: #56bcc5;
+    border-radius: 4px;
+}
+
+.item:hover,
+.item:focus,
+.urlLink:hover,
+.closeButton:hover,
+#clearButton:hover,
+#clearButton:active,
+#openFolderButton:hover,
+#openFolderButton:active,
+.pauseButton:hover,
+.resumeButton:hover,
+.stopButton:hover,
+.deleteItemButton:hover,
+.openFolderButton:hover,
+.redownloadButton:hover,
+.pauseButton:active,
+.resumeButton:active,
+.stopButton:active,
+.deleteItemButton:active,
+.openFolderButton:active,
+.redownloadButton:active,
+#controlBar,
+.deleteButton,
+progress,
+progress[value]::-webkit-progress-value {
+    transition: all .11s linear;
+}
+
+.itemSize,
+.itemTransferRate {
+    height: fit-content;
+    text-align: left;
+    font-size: 13.5px;
+    color: #656565;
+    margin-top: 6px;
+    margin-right: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.itemSize {
+    width: 22%;
+    min-width: 1%;
+}
+
+.itemTransferRate {
+    width: 64.2%;
+    min-width: 1%;
+}
+
+.itemSize,
+.itemTransferRate,
+.itemUrl,
+.itemTitle,
+.dayDate,
+#pageTitle {
+    cursor: default;
+}
+
+.itemButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+    width: fit-content;
+    min-width: fit-content;
+}
+
+.itemButtonContainerA,
+.itemButtonContainerB,
+.itemButtonContainerC,
+.itemButtonContainerD {
+    justify-content: space-between;
+    height: fit-content;
+    width: auto;
+    padding-left: 12px;
+    padding-right: 2px;
+}
+
+.itemButtonContainerA {
+    display: none;
+}
+
+.itemButtonContainerB {
+    display: none;
+}
+
+.itemButtonContainerC {
+    display: none;
+}
+
+.itemButtonContainerD {
+    display: none;
+}
+
+.pauseButton,
+.resumeButton,
+.stopButton,
+.deleteItemButton,
+.openFolderButton,
+.redownloadButton {
+    height: 26px;
+    width: 26px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 14px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.pauseButton:hover,
+.resumeButton:hover,
+.stopButton:hover,
+.deleteItemButton:hover,
+.openFolderButton:hover,
+.redownloadButton:hover {
+    background-color: #efeff1;
+}
+
+.pauseButton:active,
+.resumeButton:active,
+.stopButton:active,
+.deleteItemButton:active,
+.openFolderButton:active,
+.redownloadButton:active {
+    background-color: #dfdfe1;
+}
+
+.pauseButton {
+    background-image: url("../images/pause.png");
+}
+
+.resumeButton {
+    background-image: url("../images/resume.png");
+}
+
+.stopButton {
+    background-image: url("../images/stopDownload.png");
+}
+
+.deleteItemButton {
+    background-image: url("../images/deleteFolder.png");
+}
+
+.openFolderButton {
+    background-image: url("../images/downloadsFolder.png");
+}
+
+.redownloadButton {
+    background-image: url("../images/redownload.png");
+}
+
+#emptyView {
+    display: none;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    min-width: fit-content;
+    padding-top: 20%;
+    color: #656565;
+}
+
+#noResult {
+    display: none;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    min-width: fit-content;
+    padding-top: 20%;
+    color: #656565;
+}
+
+#eViewMessage,
+#noResultMessage {
+    box-sizing: border-box;
+    color: #656565;
+    padding-top: 1%;
+    font-size: 14px;
+}
+
+.dialogContainer {
+    display: none;
+    justify-content: center;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#dialogBoxOne,
+#dialogBoxTwo {
+    display: block;
+    box-sizing: border-box;
+    margin-top: 16%;
+    height: 197px;
+    width: 469px;
+    border: 1px solid #efeff1;
+    border-radius: 7px;
+    background-color: white;
+    padding: 20px;
+}
+
+#dialogTitle {
+    color: #56bcc5;
+    font-size: 16px;
+    height: 30%;
+    width: auto;
+}
+
+#dialogMessage {
+    color: #656565;
+    font-size: 13px;
+    height: 50%;
+    width: auto;
+}
+
+.dialogControls {
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-around;
+    height: auto;
+    width: 100%;
+}
+
+.cancelButton {
+    background-color: transparent;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #efeff1;
+    border-radius: 4px;
+    color: #56bcc5;
+    cursor: pointer;
+    outline: none;
+}
+
+.cancelButton:hover {
+    background-color: #f9f9fb;
+}
+
+.cancelButton:active {
+    background-color: #f0f0f2;
+}
+
+.removeButton {
+    background-color: #56bcc5;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    margin-left: 60%;
+    cursor: pointer;
+    outline: none;
+}
+
+.removeButton:hover {
+    background-color: #51b2b9;
+    border: 1px solid #51b2b9;
+}
+
+.removeButton:active {
+    background-color: #4ba4ac;
+    border: 1px solid #4ba4ac;
+}

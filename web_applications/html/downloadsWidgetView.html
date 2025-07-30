@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/downloadsWidgetStyles.css">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/downloadsWidgetScript.js"></script>
+</head>
+
+<body>
+    <div id="pageToolBar">
+        <div id="headerA">
+            <div id="ololanLogo">
+                <img alt="ololan" id="logo" src="../images/ololanLogo.png">
+                <div id="pageTitle">downloads</div>
+            </div>
+        </div>
+    </div>
+    <div id="pageBody">
+        <div id="downloadSection">
+            <div id="controlBar"></div>
+            <div id="itemView" onscroll="contentScrolled()">
+                <div id="itemList">
+                </div>
+                <div id="emptyView">
+                    <div id="eViewMessage">
+                        <span>No active downloads.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pageFooter">
+        <button id="downloadsManagerButton" onclick="openManager()">Show more</button>
+    </div>
+</body>
+
+</html>

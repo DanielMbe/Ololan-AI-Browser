@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ololan Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/assistantStyles.css">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/assistantScript.js"></script>
+</head>
+
+<body>
+    <div id="chatView">
+    </div>
+    <div id="suggestionView">
+        <div id="startView">
+            <div>No suggestions</div>
+        </div>
+        <div id="rows">
+        </div>
+    </div>
+    <div id="searchSpace">
+        <div id="searchBox">
+            <img src="../../images/chatDefault.png" id="searchBoxIcon">
+            <input type="text" id="searchInput" placeholder="Message here" onkeydown="validateInput(event)" oninput="suggestCommands()" onfocus="setFocusInStyle()" onfocusout="setFocusOutStyle()">
+        </div>
+    </div>
+</body>
+
+</html>

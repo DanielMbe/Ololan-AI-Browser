@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../images/newTab.png">
+    <link rel="stylesheet" type="text/css" href="../css/newtabStyles.css">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/newtabScript.js"></script>
+    <title>New Tab</title>
+</head>
+
+<body>
+    <div id="headerArea">
+        <div id="companyName">
+            <span class="letterGray">O</span>
+            <span class="letterTurquoise">l</span>
+            <span class="letterGray">o</span>
+            <span class="letterTurquoise">l</span>
+            <span class="letterBrown">an</span>
+        </div>
+    </div>
+    <div id="searchArea">
+        <div id="searchBox">
+            <img src="../../images/find.png" id="searchBoxIcon">
+            <input type="search" id="searchInput" placeholder="Search on the web" oninput="searchWithWebEngine()" onfocus="setFocusInStyle()" onfocusout="setFocusOutStyle()" onkeypress="processUri(event)">
+        </div>
+    </div>
+    <div id="bodyArea">
+        <div id="historyArea">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1416 @@
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+#pageHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    height: 69px;
+    max-height: 69px;
+    min-height: 69px;
+    width: 100%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    padding-top: 0.9%;
+    padding-bottom: 0.9%;
+    position: sticky;
+    background-color: white;
+}
+
+#headerA {
+    display: flex;
+    justify-content: flex-start;
+    height: max-content;
+    width: 21.7%;
+    min-width: fit-content;
+}
+
+#ololanLogo {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 7px;
+}
+
+#logo {
+    height: 32px;
+    width: 32px;
+}
+
+#pageTitle {
+    height: fit-content;
+    font-size: 14px;
+    font-weight: normal;
+    color: #56bcc5;
+    margin-left: 4px;
+    margin-top: 6.5px;
+}
+
+#headerB {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 78%;
+}
+
+#searchBox {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 40px;
+    width: 65%;
+    border: 1px solid #f7f7f9;
+    border-radius: 4px;
+    background-color: #fbfbfd;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 2px;
+}
+
+#searchBox:focus-within,
+#searchBox:focus-within:hover {
+    border: 2px solid #68e7f0;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    padding-left: 4px;
+    padding-right: 0px;
+    padding-top: 0px;
+    transition: border-color .11s linear;
+}
+
+#searchBox:hover {
+    border: 1px solid #68e7f0;
+    transition: border-color .11s linear;
+}
+
+#searchInput {
+    background-color: transparent;
+    color: #606060;
+    height: 36px;
+    width: 96.5%;
+    margin-left: 3px;
+    padding-bottom: 2px;
+    padding-right: 3px;
+    border-radius: 4px;
+}
+
+#searchInput:focus {
+    color: #656565;
+}
+
+#searchInput {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+#searchInput,
+#searchInput::placeholder {
+    font-size: 14.3px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#searchInput::placeholder {
+    color: #b6b6b6;
+}
+
+#searchInput::-webkit-search-cancel-button {
+    position: relative;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background-image: url(../../images/closeTwo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#searchInput:focus::-webkit-search-cancel-button {
+    background-image: url(../images/cancelTyping.png);
+}
+
+#searchBoxIcon {
+    height: 16px;
+    width: 16px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+#pageBody {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 89%;
+    max-height: 89%;
+    min-height: 10px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+}
+
+#leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 50px;
+    width: 22%;
+    min-width: 100px;
+    max-width: 22%;
+    border-top: 1px solid #f4f4f6;
+    border-right: 1px solid #f4f4f6;
+    padding: 10px;
+    background-color: white;
+}
+
+#folderSection {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    max-height: 100%;
+    min-height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.optionButton {
+    display: flex;
+    justify-content: flex-start;
+    height: 36px;
+    width: 100%;
+    min-width: 80px;
+    max-width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #606060;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 4px;
+    outline: none;
+}
+
+.buttonIcon {
+    height: 21px;
+    width: 21px;
+    margin-top: 6px;
+}
+
+.buttonText {
+    display: block;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 9px;
+    height: 16px;
+    width: fit-content;
+    max-width: fit-content;
+    min-width: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+#rightSection {
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    min-height: 1%;
+    width: 78%;
+    max-width: 78%;
+    padding-bottom: 10px;
+}
+
+#controlBar {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 1px;
+    width: auto;
+    border-bottom: 1px solid #f4f4f6;
+    padding: 0px;
+    transition: box-shadow .18s linear;
+    transition: height .11s linear;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#itemView {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 99.9%;
+    width: 100%;
+    max-height: 99.9%;
+    min-height: 100px;
+    min-width: max-content;
+}
+
+#itemView::-webkit-scrollbar,
+#folderSection::-webkit-scrollbar,
+.optionRowContent::-webkit-scrollbar,
+.selectionMenu::-webkit-scrollbar {
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    width: 9px;
+    background-color: #f2f5f5;
+}
+
+#itemView::-webkit-scrollbar-thumb,
+#folderSection::-webkit-scrollbar-thumb,
+.optionRowContent::-webkit-scrollbar-thumb,
+.selectionMenu::-webkit-scrollbar-thumb {
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    min-height: 5px;
+    background-color: #56bcc5;
+}
+
+.optionContainer {
+    box-sizing: border-box;
+    display: none;
+    height: 99%;
+    max-height: 99%;
+    min-height: fit-content;
+    width: 70%;
+    min-width: 70%;
+    padding-top: 25px;
+    color: #606060;
+    font-size: 14.3px;
+}
+
+.containerTitle {
+    display: block;
+    text-align: left;
+    height: 16px;
+    width: fit-content;
+    font-weight: calc(490);
+    margin-bottom: 11px;
+    margin-top: 25px;
+}
+
+.containerTitle,
+.rowDetail,
+.cAddress,
+.cLogin,
+#logoTitle,
+.cardDate {
+    cursor: default;
+}
+
+.rowButton:hover,
+.rowButton:active,
+.optionButton:focus,
+.cButtonView:hover,
+.cButtonView:active,
+.cButtonEdit:hover,
+.cButtonEdit:active,
+.cButtonDelete:hover,
+.cButtonDelete:active,
+.cButtonSave:hover,
+.cButtonSave:active,
+.cButtonCancel:hover,
+.cButtonCancel:active,
+.pButtonEdit:hover,
+.pButtonEdit:active,
+.pButtonDelete:hover,
+.pButtonDelete:active,
+.pButtonSave:hover,
+.pButtonSave:active,
+.pButtonCancel:hover,
+.pButtonCancel:active,
+.spButtonEdit:hover,
+.spButtonEdit:active,
+.spButtonDelete:hover,
+.spButtonDelete:active,
+.spButtonSave:hover,
+.spButtonSave:active,
+.spButtonCancel:hover,
+.spButtonCancel:active,
+.coButtonDelete:hover,
+.coButtonDelete:active,
+#clbButton:hover,
+#clbButton:active,
+#clcButton:hover,
+#clcButton:active {
+    transition: all .11s linear;
+}
+
+.rowButton,
+#clbButton,
+#clcButton {
+    justify-content: center;
+    align-items: center;
+    height: 31px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: max-content;
+    max-width: 50%;
+    min-width: fit-content;
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    background-color: #56bcc5;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.rowButton {
+    display: flex;
+}
+
+#updateDownloadButton {
+    display: none;
+}
+
+#defaultBrowser {
+    display: none;
+}
+
+#clbButton,
+#clcButton {
+    display: none;
+}
+
+.rowButton:hover,
+#clbButton:hover,
+#clcButton:hover {
+    background-color: #51b2b9;
+    border: 1px solid #51b2b9;
+}
+
+.rowButton:active,
+#clbButton:active,
+#clcButton:active {
+    background-color: #4ba4ac;
+    border: 1px solid #4ba4ac;
+    color: #f6f6f6;
+}
+
+.rButtonText {
+    height: fit-content;
+    width: fit-content;
+    max-width: max-content;
+}
+
+.rowDetail {
+    height: fit-content;
+    width: 70%;
+    max-width: 70%;
+    min-width: 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.optionRowDetails {
+    display: none;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 5px;
+    width: 99%;
+    max-width: 99%;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    color: #606060;
+    padding: 11px;
+    margin-bottom: 0px;
+    opacity: 0.0;
+    font-size: 1px;
+}
+
+#aboutDetails {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 99%;
+    max-width: 99%;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    color: #606060;
+    padding: 11px;
+    height: 100px;
+    margin-bottom: 7px;
+}
+
+.optionRowDetails.showOptionDetails {
+    transition: all .1s linear;
+    opacity: 1.0;
+    height: 100px;
+    font-size: 14.3px;
+    margin-bottom: 7px;
+}
+
+.optionRow,
+.specificPageOption {
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 45px;
+    width: 99%;
+    max-width: 99%;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-bottom: 7px;
+}
+
+.optionRow {
+    display: flex;
+}
+
+.specificPageOption {
+    display: none;
+}
+
+.rowDetail {
+    color: #606060;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+}
+
+.switchInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: .2s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    transition: .2s;
+    background-color: white;
+}
+
+.switchInput:checked+.slider {
+    background-color: #56bcc5;
+}
+
+.switchInput:focus+.slider {
+    box-shadow: 0 0 1px #56bcc5;
+}
+
+.switchInput:checked+.slider:before {
+    transform: translateX(17.5px);
+}
+
+.optionRowContent {
+    display: none;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    overflow-y: auto;
+    height: 69.5%;
+    max-height: 69.5%;
+    min-height: 55%;
+    width: 99%;
+    max-width: 99%;
+    min-width: 10px;
+    border-radius: 4px;
+    border: 4px solid #f9f9fb;
+    padding: 15px;
+    margin-bottom: 7px;
+}
+
+.optionRowContent.hide,
+.specificPageOption.hide {
+    transition: .14s linear;
+    opacity: 0.0 !important;
+}
+
+.credentialContainer,
+.paymentContainer,
+.specificPageContainer {
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.credential,
+.paymentMethod,
+.specificPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 45px;
+    width: 100%;
+    min-width: 10px;
+    border: 1px solid #f9f9fb;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+}
+
+.signInData,
+.website,
+.paymentData,
+.specificPageData {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.signInData,
+.paymentData,
+.specificPageData {
+    justify-content: space-around;
+    height: fit-content;
+    width: 100%;
+}
+
+.signInData,
+.paymentData,
+.specificPageData {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.website {
+    justify-content: flex-start;
+    align-items: center;
+    height: 36px;
+    width: 40%;
+    max-width: 40%;
+    margin-bottom: 5px;
+    border: 1px solid #f9f9fb;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.siteIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.passwordContainer,
+.cardContainer,
+.pageTitleContainer,
+.pageUrlContainer {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 30px;
+    border-radius: 4px;
+    padding: 1px;
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+
+.passwordContainer,
+.pageTitleContainer,
+.pageUrlContainer {
+    width: 43%;
+}
+
+.cardContainer {
+    width: 36%;
+}
+
+.passwordContainer.editing,
+.cardContainer.editing,
+.pageTitleContainer.editing,
+.pageUrlContainer.editing,
+.monthContainer.editing,
+.yearContainer.editing {
+    border: 2px solid #68e7f0;
+    padding: 0px;
+    background-color: white;
+}
+
+.cPassword,
+.cardNumber,
+.cardName,
+.pageUrl,
+.pageTitle {
+    color: #606060;
+    height: 26px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.cPassword:focus,
+.cardNumber:focus,
+.cardName:focus,
+.pageUrl:focus,
+.pageTitle:focus {
+    color: #656565;
+}
+
+.cPassword,
+.cardNumber,
+.cardName,
+.pageUrl,
+.pageTitle {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.cPassword,
+.cPassword::placeholder,
+.cardNumber,
+.cardNumber::placeholder,
+.cardName,
+.cardName::placeholder,
+.pageUrl,
+.pageUrl::placeholder,
+.pageTitle,
+.pageTitle::placeholder {
+    font-size: 13px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cPassword::placeholder,
+.cardNumber::placeholder,
+.cardName::placeholder,
+.pageUrl::placeholder,
+.pageTitle::placeholder {
+    color: #b6b6b6;
+}
+
+.cAddress,
+.cLogin,
+.cardExpiration {
+    height: fit-content;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.cAddress {
+    max-width: 80%;
+    margin-left: 8px;
+    margin-bottom: 3px;
+    min-width: 10px;
+}
+
+.cLogin {
+    max-width: 45%;
+    width: 45%;
+    margin-top: 4px;
+    min-width: 10px;
+}
+
+.cardExpiration {
+    border-radius: 4px;
+    width: 17.5%;
+    min-width: fit-content;
+    color: #606060;
+}
+
+.cButtonContainer,
+.pButtonContainer,
+.spButtonContainer {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    min-width: fit-content;
+    margin-top: 3px;
+}
+
+.cButtonContainer {
+    width: 13%;
+}
+
+.spButtonContainer,
+.pButtonContainer {
+    width: 8%;
+}
+
+.cButtonContainerA,
+.cButtonContainerB,
+.pButtonContainerA,
+.pButtonContainerB,
+.spButtonContainerA,
+.spButtonContainerB {
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+}
+
+.cButtonContainerA,
+.pButtonContainerA,
+.spButtonContainerA {
+    display: flex;
+}
+
+.cButtonContainerB,
+.spButtonContainerB,
+.pButtonContainerB {
+    display: none;
+}
+
+.cButtonView,
+.cButtonEdit,
+.cButtonDelete,
+.cButtonSave,
+.cButtonCancel,
+.pButtonEdit,
+.pButtonDelete,
+.pButtonSave,
+.pButtonCancel,
+.spButtonEdit,
+.spButtonDelete,
+.spButtonSave,
+.spButtonCancel,
+.coButtonDelete {
+    height: 24px;
+    width: 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.cButtonEdit,
+.pButtonEdit,
+.spButtonEdit {
+    background-image: url("../images/editFolder.png");
+}
+
+.cButtonDelete,
+.pButtonDelete,
+.spButtonDelete,
+.coButtonDelete {
+    background-image: url("../images/deleteFolder.png");
+}
+
+.cButtonSave,
+.spButtonSave,
+.pButtonSave {
+    background-image: url("../images/saveEditing.png");
+}
+
+.cButtonCancel,
+.spButtonCancel,
+.pButtonCancel {
+    background-image: url("../images/cancelEditing.png");
+}
+
+.cButtonView {
+    background-image: url("../images/revealPwd.png");
+}
+
+.cButtonView:hover,
+.cButtonEdit:hover,
+.cButtonDelete:hover,
+.cButtonSave:hover,
+.cButtonCancel:hover,
+.pButtonEdit:hover,
+.pButtonDelete:hover,
+.pButtonSave:hover,
+.pButtonCancel:hover,
+.spButtonEdit:hover,
+.spButtonDelete:hover,
+.spButtonSave:hover,
+.spButtonCancel:hover,
+.coButtonDelete:hover {
+    background-color: #efeff1;
+    border: 1px solid #efeff1;
+}
+
+.cButtonView:active,
+.cButtonCancel:active,
+.cButtonDelete:active,
+.cButtonEdit:active,
+.cButtonSave:active,
+.pButtonEdit:active,
+.pButtonDelete:active,
+.pButtonSave:active,
+.pButtonCancel:active,
+.spButtonEdit:active,
+.spButtonDelete:active,
+.spButtonSave:active,
+.spButtonCancel:active,
+.coButtonDelete:active {
+    background-color: #dfdfe1;
+    border: 1px solid #dfdfe1;
+}
+
+.rowSelectionMenu {
+    box-sizing: border-box;
+    height: 31px;
+    width: 25%;
+    max-width: 50%;
+    min-width: fit-content;
+    border: 1px solid #dfdfe1;
+    border-radius: 4px;
+    background-color: #dfdfe1;
+}
+
+.selectionMenu {
+    appearance: none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: transparent;
+    color: #606060;
+    border: 1px solid #dfdfe1;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.range {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.rangeContainer {
+    width: 84%;
+}
+
+.rangeInput {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+    outline: none;
+    border-radius: 4px;
+}
+
+.rangeInput::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    width: 15px;
+    background-color: #56bcc5;
+    cursor: pointer;
+    border-radius: 7.5px;
+}
+
+#rangeValue {
+    height: fit-content;
+    width: 20px;
+    text-align: end;
+}
+
+.checkBx {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-left: 3px;
+}
+
+.checkBx .checkBInput {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.checkBx:hover .checkBInput~.checkmark {
+    background-color: #ccc;
+}
+
+.checkBx .checkBInput:checked~.checkmark {
+    background-color: #56bcc5;
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.checkBx .checkBInput:checked~.checkmark:after {
+    display: block;
+}
+
+.checkBx .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.checkBxB {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    right: 11px;
+    top: 0.5px;
+}
+
+.checkBxB .checkBInputB {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmarkB {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.checkBxB:hover .checkBInputB~.checkmarkB {
+    background-color: #ccc;
+}
+
+.checkBxB .checkBInputB:checked~.checkmarkB {
+    background-color: #56bcc5;
+}
+
+.checkmarkB:after {
+    content: "";
+    display: none;
+    position: absolute;
+}
+
+.checkBxB .checkBInputB:checked~.checkmarkB:after {
+    display: block;
+}
+
+.checkBxB .checkmarkB:after {
+    top: 2.5px;
+    left: 6.5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.checkBx,
+.checkBInput,
+.checkmark,
+.checkBxB,
+.checkBInputB,
+.checkmarkB {
+    transition: .2s linear;
+}
+
+#aboutOlolan {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    width: 120px;
+    margin-bottom: 11px;
+    margin-top: 25px;
+}
+
+#Ologo {
+    height: 35px;
+    width: 35px;
+}
+
+#logoTitle {
+    display: block;
+    text-align: left;
+    height: fit-content;
+    width: fit-content;
+    font-size: 25px;
+    font-weight: calc(700);
+    color: #afafaf;
+}
+
+.aboutLink {
+    height: fit-content;
+    width: auto;
+    min-width: 10px;
+    text-decoration: none;
+    color: #56bcc5;
+}
+
+.palette {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 85%;
+    width: 80px;
+    min-width: 10px;
+    border-radius: 4px;
+    border: 3px solid white;
+}
+
+.colorSchemeLeft {
+    height: 100%;
+    width: 50%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.colorSchemeRight {
+    height: 100%;
+    width: 50%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#syncAccount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #e9e9eb;
+    height: 80px;
+    width: 99%;
+    max-width: 99%;
+    border-radius: 4px;
+    background-color: #f9f9fb;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-bottom: 7px;
+}
+
+#profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 70px;
+    width: 70px;
+    min-width: 70px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+#status {
+    height: fit-content;
+    width: 79%;
+    max-width: 79%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.datePanel {
+    display: none;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+}
+
+.cardDate {
+    margin-top: 5.4px;
+    width: 100%;
+    text-align: left;
+}
+
+.monthContainer,
+.yearContainer {
+    box-sizing: border-box;
+    height: 29.4px;
+    max-width: 100%;
+    min-width: fit-content;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.monthContainer {
+    width: 43%;
+}
+
+.yearContainer {
+    width: 53%;
+}
+
+.monthSelection,
+.yearSelection {
+    appearance: none;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    background-color: transparent;
+    color: #606060;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+#customFontValue {
+    display: none;
+}
+
+.dialogContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#sEngineDialogBoxA,
+#sEngineDialogBoxB {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 350px;
+    width: 500px;
+    border: 1px solid #efeff1;
+    border-radius: 7px;
+    background-color: white;
+    padding: 10px;
+}
+
+.dialogControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 14%;
+    width: 100%;
+}
+
+.dialogTitle {
+    color: #56bcc5;
+    font-size: 16px;
+    height: 14%;
+    width: auto;
+}
+
+.dialogBody {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 70%;
+}
+
+.fieldTitle {
+    color: #56bcc5;
+    font-size: 14px;
+    height: fit-content;
+    width: auto;
+    margin-bottom: 2px;
+}
+
+.dialogField {
+    box-sizing: border-box;
+    height: 37px;
+    width: 100%;
+    border: 1px solid #efeff1;
+    border-radius: 4px;
+    background-color: #ffffff;
+    transition: border-color .11s linear;
+    margin-bottom: 13px;
+}
+
+.dialogField:focus-within {
+    border: 2px solid #68e7f0;
+}
+
+#nameInput,
+#shortcutInput,
+#urlInput,
+#nameInputEdit,
+#shortcutInputEdit,
+#urlInputEdit {
+    color: #656565;
+    height: 95%;
+    width: 98.5%;
+    background-color: transparent;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+#nameInput:focus,
+#shortcutInput:focus,
+#urlInput:focus,
+#nameInputEdit:focus,
+#shortcutInputEdit:focus,
+#urlInputEdit:focus {
+    padding-left: 9px;
+}
+
+#nameInput,
+#nameInput::placeholder,
+#shortcutInput,
+#shortcutInput::placeholder,
+#urlInput,
+#urlInput::placeholder,
+#nameInputEdit,
+#nameInputEdit::placeholder,
+#shortcutInputEdit,
+#shortcutInputEdit::placeholder,
+#urlInputEdit,
+#urlInputEdit::placeholder {
+    font-size: 14.3px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#nameInput::placeholder,
+#shortcutInput::placeholder,
+#urlInput::placeholder,
+#nameInputEdit::placeholder,
+#shortcutInputEdit::placeholder,
+#urlInputEdit::placeholder {
+    color: #b6b6b6;
+}
+
+.cancelButton {
+    background-color: transparent;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #efeff1;
+    border-radius: 4px;
+    color: #56bcc5;
+    cursor: pointer;
+    outline: none;
+}
+
+.cancelButton:hover {
+    background-color: #f9f9fb;
+}
+
+.cancelButton:active {
+    background-color: #f0f0f2;
+}
+
+.saveButton {
+    background-color: #56bcc5;
+    height: 33px;
+    width: 90px;
+    border: 1px solid #56bcc5;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    outline: none;
+}
+
+.saveButton:hover {
+    background-color: #51b2b9;
+    border: 1px solid #51b2b9;
+}
+
+.saveButton:active {
+    background-color: #4ba4ac;
+    border: 1px solid #4ba4ac;
+}

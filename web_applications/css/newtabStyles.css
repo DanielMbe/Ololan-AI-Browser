@@ -1,0 +1,237 @@
+html {
+    height: 100%;
+    width: 100%;
+    min-width: 1%;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: Arial, 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 1%;
+    min-height: 1%;
+    background-image: url("../images/newtabBackground.png");
+    background-size: 100%;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+}
+
+#headerArea,
+#searchArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#headerArea {
+    height: 35%;
+}
+
+#companyName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    font-weight: bold;
+}
+
+.letterBrown {
+    color: #e69d73;
+}
+
+.letterTurquoise {
+    color: #56bcc5;
+}
+
+.letterGray {
+    color: #a3a3a3;
+}
+
+#searchArea {
+    height: 50px;
+}
+
+#searchBox {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #c1c1c3;
+    height: 40px;
+    width: 50%;
+    border: 1px solid #e3e3e5;
+    border-radius: 4px;
+    background-color: #e3e3e5;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 2px;
+}
+
+#searchBox:focus-within,
+#searchBox:focus-within:hover {
+    border: 2px solid #56bcc5;
+    padding-left: 4px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+#searchInput {
+    color: #353535;
+    background-color: #e3e3e5;
+    height: 36px;
+    width: 96.5%;
+    margin-left: 3px;
+    padding-bottom: 2px;
+    padding-right: 3px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#searchInput:focus {
+    color: #656565;
+}
+
+#searchInput,
+#searchInput::placeholder {
+    font-size: 14.3px;
+    font-weight: normal;
+    font-family: 'Segoe UI', gadudi, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#searchInput::placeholder {
+    color: #a5a5a5;
+}
+
+#searchInput::-webkit-search-cancel-button {
+    position: relative;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    background-image: url(../../images/closeTwo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#searchInput:focus::-webkit-search-cancel-button {
+    background-image: url(../images/cancelTyping.png);
+}
+
+#searchBoxIcon {
+    height: 16px;
+    width: 16px;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+#bodyArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 56%;
+    max-height: max-content;
+    width: 100%;
+}
+
+#historyArea {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 83%;
+    width: 90%;
+    min-width: 1px;
+}
+
+.itemCell {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 95%;
+    width: 18%;
+    min-width: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hItem {
+    box-sizing: border-box;
+    height: 47%;
+    width: 99%;
+    min-height: 20px;
+    min-width: 1px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px #d1d1d1;
+    border: 1px solid #ededee;
+    background-color: #f3f3f5;
+}
+
+.hItem:hover {
+    border: 1px solid #e3e3e5;
+    background-color: #e9e9eb;
+    transition: background-color .11s linear;
+}
+
+.itemLink {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 1px;
+    max-width: 100%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.hItemContent {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+    max-width: 100%;
+    min-width: 1px;
+}
+
+.hItemLogo {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 10px;
+}
+
+.hItemTitle {
+    box-sizing: border-box;
+    height: fit-content;
+    width: 100%;
+    max-width: 100%;
+    min-width: 1px;
+    color: #656565;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right: 5px;
+}

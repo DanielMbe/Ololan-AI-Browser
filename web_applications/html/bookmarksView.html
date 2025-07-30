@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ololan bookmarks</title>
+    <link rel="stylesheet" type="text/css" href="../css/bookmarksStyles.css">
+    <link rel="icon" href="../../images/bookmarksIcon.png">
+    <script type="text/javascript" defer="defer" src="../javascript/qwebchannel.js"></script>
+    <script type="text/javascript" defer="defer" src="../javascript/bookmarksScript.js"></script>
+</head>
+
+<body onresize="setControlBarVisible()">
+    <div id="pageHeader">
+        <div id="headerA">
+            <div id="ololanLogo">
+                <img id="logo" src="../images/ololanLogo.png">
+                <div id="pageTitle">bookmarks</div>
+            </div>
+        </div>
+        <div id="headerB">
+            <div id="searchBox">
+                <img src="../../images/find.png" id="searchBoxIcon">
+                <input type="search" id="searchInput" placeholder="Search in Bookmarks" oninput="searchInBookmark()" onfocus="setFocusInStyle()" onfocusout="setFocusOutStyle()">
+            </div>
+        </div>
+    </div>
+    <div id="pageBody">
+        <div id="leftSection">
+            <button type="button" id="addFolderControl" onclick="openDialogBoxOne()">
+                <div id="buttonText">New folder</div>
+            </button>
+            <div id="folderSection"></div>
+        </div>
+        <div id="middleSection">
+            <div>
+                <button type="button" class="controlButton" title="Add a new bookmark" onclick="addBookmark()">
+                    <img src="../images/plus.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Open in a new tab" onclick="openInNewTab()">
+                    <img src="../images/newTabO.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Open in a new window" onclick="openInNewWindow()">
+                    <img src="../images/normalWindow.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Open in a private window" onclick="openInPrivateWindow()">
+                    <img src="../images/privateWindow.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Copy this bookmark" onclick="copyBookmark()">
+                    <img src="../images/copy.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Cut this bookmark" onclick="cutBookmark()">
+                    <img src="../images/cut.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="paste this bookmark here" onclick="pasteCopiedBookmark()">
+                    <img src="../images/paste.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Delete this bookmark" onclick="deleteBookmark()">
+                    <img src="../images/delete.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Select this bookmark" onclick="markBookmark()">
+                    <img src="../images/select.png" class="controlButtonIcon">
+                </button>
+            </div>
+            <div>
+                <button type="button" class="controlButton" title="Delete all the bookmarks" onclick="clearSelectedFolder()">
+                    <img src="../images/clear.png" class="controlButtonIcon">
+                </button>
+            </div>
+        </div>
+        <div id="rightSection" onclick="clearBookmarkFocus(event)">
+            <div id="controlBar">
+                <div id="selectedNotification">
+                    <div id="selectionText"></div>
+                    <button id="selectButton" title="Cancel selection" onclick="markBookmark()">
+                        <img src="../images/cancel.png" id="selectButtonIcon">
+                    </button>
+                </div>
+            </div>
+            <div id="itemView" onscroll="contentScrolled()">
+                <div id="itemList">
+                </div>
+                <div id="emptyView">
+                    <div class="eViewMessage">
+                        <span>Let's bookmark your first pages !</span><br/>
+                        <span>Click the star icon in the address bar to do it.</span>
+                    </div>
+                </div>
+                <div id="noResult">
+                    <div class="noResultMessage">
+                        <span>Sorry, no occurrences found.</span><br/>
+                        <span>Only pages you browsed from this PC appear here.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialogContainer">
+            <div id="dialogBoxOne">
+                <div class="dialogTitle">Add folder</div>
+                <div class="dialogBody">
+                    <div class="fieldTitle">Name</div>
+                    <div class="dialogField">
+                        <input type="text" id="fieldInput" placeholder="Enter folder name">
+                    </div>
+                </div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeDialogBox()">Cancel</button>
+                    <button type="button" class="saveButton" onclick="addFolder()">Save</button>
+                </div>
+            </div>
+            <div id="dialogBoxTwo">
+                <div class="dialogTitle">Edit folder</div>
+                <div class="dialogBody">
+                    <div class="fieldTitle">Name</div>
+                    <div class="dialogField">
+                        <input type="text" id="editInput" placeholder="Enter folder name">
+                    </div>
+                </div>
+                <div class="dialogControls">
+                    <button type="button" class="cancelButton" onclick="closeDialogBox()">Cancel</button>
+                    <button type="button" class="saveButton" onclick="editFolder()">Save</button>
+                </div>
+            </div>
+        </div>
+        <div id="undoNotification">
+            <button type="button" id="undoButton" onclick="undoRemoving()">
+                <div id="undoText">Undo deleting</div>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>
